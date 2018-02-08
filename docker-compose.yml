@@ -1,0 +1,6 @@
+version: '2'
+services:
+  subscriptionservice:
+      image: liemmn/dxc-subscription-service:microservices
+      ports:
+        - "8080:8080"
