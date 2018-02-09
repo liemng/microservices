@@ -11,6 +11,7 @@
   <description>Parent Pom for the microservices project</description>
 
   <modules>
+    <module>configserver</module>
     <module>subscription</module>
   </modules>
 
