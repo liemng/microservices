@@ -1,5 +1,6 @@
 package com.dxc.microservices.subscription.model;
 
+import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
@@ -9,6 +10,7 @@ public class Movie {
     @Id
     @GeneratedValue
     private long id;
+    @Column(unique=true)
     private String title;
     private String genre;
     private double price;
