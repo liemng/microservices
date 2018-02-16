@@ -26,7 +26,7 @@
 
 	<properties>
 		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
-		<start-class>com.dxc.microservices.config.Application</start-class>
+		<start-class>com.dxc.microservices.config.ConfigApplication</start-class>
 		<java.version>1.8</java.version>
 		<docker.image.name>liemmn/dxc-config-service</docker.image.name>
 		<docker.image.tag>microservices</docker.image.tag>

@@ -10,5 +10,4 @@
 `docker-compose up`
 
 ## Clean-up Instructions
-`docker-compose down &&`
-`docker rmi $(docker images | awk '$2~/microservices/{print $3}')`
+`docker-compose down && docker rmi $(docker images | awk '$2~/microservices/{print $3}')`
