@@ -7,10 +7,10 @@
 		<version>1.5.10.RELEASE</version>
 	</parent>
 	<groupId>com.dxc.microservices</groupId>
-	<artifactId>configserver</artifactId>
+	<artifactId>oauth2server</artifactId>
 	<version>0.0.1-SNAPSHOT</version>
-	<name>Configuration Microservice</name>
-	<description>Configuration Microservice to provide 12-factor configuration services</description>
+	<name>OAuth2 Microservice</name>
+	<description>An embedded OAuth2 Microservice</description>
 
 	<dependencyManagement>
 		<dependencies>
@@ -26,20 +26,36 @@
 
 	<properties>
 		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
-		<start-class>com.dxc.microservices.config.ConfigApplication</start-class>
+		<start-class>com.dxc.microservices.oauth2.OAuth2Server</start-class>
 		<java.version>1.8</java.version>
-		<docker.image.name>liemmn/dxc-config-server</docker.image.name>
+		<docker.image.name>liemmn/dxc-oauth2-server</docker.image.name>
 		<docker.image.tag>microservices</docker.image.tag>
 	</properties>
 
 	<dependencies>
+		<!-- OAuth2 stuff -->
 		<dependency>
-			<groupId>org.springframework.cloud</groupId>
-			<artifactId>spring-cloud-starter-config</artifactId>
+			<groupId>org.springframework.boot</groupId>
+			<artifactId>spring-boot-starter-security</artifactId>
 		</dependency>
 		<dependency>
-			<groupId>org.springframework.cloud</groupId>
-			<artifactId>spring-cloud-config-server</artifactId>
+			<groupId>org.springframework.boot</groupId>
+			<artifactId>spring-boot-starter-web</artifactId>
+		</dependency>
+		<dependency>
+			<groupId>org.springframework.security.oauth</groupId>
+			<artifactId>spring-security-oauth2</artifactId>
+		</dependency>
+		<!-- Health check -->
+		<dependency>
+			<groupId>org.springframework.boot</groupId>
+			<artifactId>spring-boot-starter-actuator</artifactId>
+		</dependency>
+		<!-- Test -->
+		<dependency>
+			<groupId>org.springframework.boot</groupId>
+			<artifactId>spring-boot-starter-test</artifactId>
+			<scope>test</scope>
 		</dependency>
 	</dependencies>
 
@@ -88,4 +104,17 @@
 			</plugin>
 		</plugins>
 	</build>
+
+	<repositories>
+		<repository>
+			<id>spring-releases</id>
+			<url>https://repo.spring.io/libs-release</url>
+		</repository>
+	</repositories>
+	<pluginRepositories>
+		<pluginRepository>
+			<id>spring-releases</id>
+			<url>https://repo.spring.io/libs-release</url>
+		</pluginRepository>
+	</pluginRepositories>
 </project>

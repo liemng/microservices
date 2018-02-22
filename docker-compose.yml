@@ -9,11 +9,15 @@ services:
       POSTGRES_PASSWORD: 7layer
       POSTGRES_DB: microservicedb
   configserver:
-    image: liemmn/dxc-config-service:microservices
+    image: liemmn/dxc-config-server:microservices
     ports:
     - 8888:8888
     environment:
       ENCRYPT_KEY: IMSYMMETRIC
+  oauth2server:
+    image: liemmn/dxc-oauth2-server:microservices
+    ports:
+    - 9999:9999
   subscriptionservice:
     image: liemmn/dxc-subscription-service:microservices
     ports:
