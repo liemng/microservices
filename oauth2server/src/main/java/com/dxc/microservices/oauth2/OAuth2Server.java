@@ -35,13 +35,13 @@ public class OAuth2Server {
         return (user != null) ? user.getUserAuthentication().getPrincipal() : null;
     }
 
-    // Configuring the resource server and protect the token introspection end-point
+    // Protect all endpoints except for the health check
     @Configuration
     @EnableResourceServer
     protected static class ResourceServerConfig extends ResourceServerConfigurerAdapter {
         @Override
         public void configure(HttpSecurity http) throws Exception {
-            http.antMatcher("/user").authorizeRequests().anyRequest().authenticated();
+            http.authorizeRequests().antMatchers("/health").permitAll().anyRequest().authenticated();
         }
     }
 
