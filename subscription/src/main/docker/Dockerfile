@@ -1,5 +1,5 @@
 FROM openjdk:8-jdk-alpine
-RUN  apk update && apk upgrade && apk add netcat-openbsd
+RUN  apk update && apk upgrade && apk add curl
 RUN mkdir -p /usr/local/subscriptionservice
 ADD  @project.build.finalName@.jar /usr/local/subscriptionservice/
 ADD run.sh run.sh
