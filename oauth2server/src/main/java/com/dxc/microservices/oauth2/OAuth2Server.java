@@ -80,7 +80,7 @@ public class OAuth2Server {
         }
     }
 
-    // Configuring an in-memory user authentication
+    // Configuring an in-memory user authentication.  In reality, we would federate this stuff.
     @Configuration
     protected static class UserConfig extends WebSecurityConfigurerAdapter {
         
@@ -101,8 +101,8 @@ public class OAuth2Server {
         @Override
         protected void configure(AuthenticationManagerBuilder auth) throws Exception {
             auth.inMemoryAuthentication()
-                .withUser("elisabet").password("skyline1").roles("USER").and()
-                .withUser("liemmn").password("skyline2").roles("USER", "ADMIN");
+                .withUser("justin").password("skyline").roles("USER").and()
+                .withUser("liemmn").password("skyline").roles("USER", "SUBSCRIBER");
         }
     }
 }

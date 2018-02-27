@@ -9,5 +9,7 @@
 ## Deploy Instructions
 `docker-compose up`
 
+_Note_: The microservices utilize the CA Technologies API Gateway and requires a valid `LICENSE.xml` file in the ./apigw directory to work.
+
 ## Clean-up Instructions
 `docker-compose down && docker rmi $(docker images | awk '$2~/microservices/{print $3}')`
