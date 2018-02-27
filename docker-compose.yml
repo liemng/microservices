@@ -2,6 +2,9 @@ version: '2.1'
 services:
   ssg:
     image: caapim/gateway:9.3.00
+    mem_limit: 2048m
+    expose:
+    - "8777"
     ports:
     - 8080:8080
     - 8443:8443
