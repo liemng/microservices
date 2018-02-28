@@ -4,7 +4,7 @@ services:
     image: caapim/gateway:9.3.00
     mem_limit: 2048m
     expose:
-    - "8777"
+    - 8777
     ports:
     - 8080:8080
     - 8443:8443
@@ -38,6 +38,12 @@ services:
       test: /usr/bin/mysql --user=root --password=7layer --execute "SHOW DATABASES;"
       interval: 10s
       timeout: 10s
+  oauth2server:
+    image: liemmn/dxc-oauth2-server:microservices
+    ports:
+    - 9999:9999
+    healthcheck:
+      test: ["CMD", "curl", "-f", "http://localhost:9999/health"]
   configserver:
     image: liemmn/dxc-config-server:microservices
     ports:
@@ -46,12 +52,6 @@ services:
       ENCRYPT_KEY: IMSYMMETRIC
     healthcheck:
       test: ["CMD", "curl", "-f", "http://localhost:8888/health"]
-  oauth2server:
-    image: liemmn/dxc-oauth2-server:microservices
-    ports:
-    - 9999:9999
-    healthcheck:
-      test: ["CMD", "curl", "-f", "http://localhost:9999/health"]
   subscriptionservice:
     image: liemmn/dxc-subscription-service:microservices
     ports:

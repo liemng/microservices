@@ -1,0 +1,458 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<l7:Bundle xmlns:l7="http://ns.l7tech.com/2010/04/gateway-management">
+    <l7:References>
+        <l7:Item>
+            <l7:Name>microservices</l7:Name>
+            <l7:Id>411c6172361ed504c894e9deee516b17</l7:Id>
+            <l7:Type>FOLDER</l7:Type>
+            <l7:TimeStamp>2018-02-28T20:45:16.150Z</l7:TimeStamp>
+            <l7:Resource>
+                <l7:Folder folderId="0000000000000000ffffffffffffec76" id="411c6172361ed504c894e9deee516b17" version="0">
+                    <l7:Name>microservices</l7:Name>
+                </l7:Folder>
+            </l7:Resource>
+        </l7:Item>
+        <l7:Item>
+            <l7:Name>SSL</l7:Name>
+            <l7:Id>00000000000000000000000000000002:SSL</l7:Id>
+            <l7:Type>SSG_KEY_ENTRY</l7:Type>
+            <l7:TimeStamp>2018-02-28T20:45:16.471Z</l7:TimeStamp>
+            <l7:Resource>
+                <l7:PrivateKey alias="SSL" id="00000000000000000000000000000002:SSL" keystoreId="00000000000000000000000000000002">
+                    <l7:CertificateChain>
+                        <l7:CertificateData>
+                            <l7:IssuerName>CN%3D7e75e7e325b2</l7:IssuerName>
+                            <l7:SerialNumber>17252236991667768927</l7:SerialNumber>
+                            <l7:SubjectName>CN%3D7e75e7e325b2</l7:SubjectName>
+                            <l7:Encoded>MIIC8zCCAdugAwIBAgIJAO9sQiM9Ng5fMA0GCSqGSIb3DQEBDAUAMBcxFTATBgNVBAMTDDdlNzVlN2UzMjViMjAeFw0xODAyMjcxODI1MDZaFw0yODAyMjUxODI1MDZaMBcxFTATBgNVBAMTDDdlNzVlN2UzMjViMjCCASIwDQYJKoZIhvcNAQEBBQADggEPADCCAQoCggEBAJXHHJIEYvj+/ysZpHSBzMwggRBf/vAN1UUrPAa+NDjSyZuypOKRrUPpAlYM0gvcEB2kJwtRoxFkKo2cFsT8D+0tDDr2/t0EodhbUSGxHLgBuxcAnfv/vmU/j+gwjcwbae5w0WqlZMYyQdk6cF1s3SytqKQsDjmS3vc3MgihOlxmFWQbkULD16xV5z6hV0Ylr8Lm0D1Q4k9ZG48Cn3ONFM40HhLTqNhja4KsoOtUElvdJCWNjcGyqz6HJOiewOCiZGEogMyyzU32UGYZWERV5WAEUBh7Yv5OYHAko80LM3fQFPwo2mUdajJi2KQ0ZdD1C2UyZHg/Hp0Eit+W0CVWrcMCAwEAAaNCMEAwHQYDVR0OBBYEFJ2bBU7qYx5SkiaSVmGzgv4yHuLRMB8GA1UdIwQYMBaAFJ2bBU7qYx5SkiaSVmGzgv4yHuLRMA0GCSqGSIb3DQEBDAUAA4IBAQAYCE/sauWaS4zImRucp/N32nKOwoWFJeXB9sp/zGbNezMAdemhOpnxMeAebAIw6Ai8v6fBPYgVOaGcRGkYtDXU04B1Th9z832WJ89RyEMbWDCuOAtGcMuNlYrRmagZ7omXNf5bijT4h663xK1yf9O37iafxVg/B29Q8crRdolcs/vvrCGZguzAxmO5wf16kJzyXzhnmCrahvBx5VL148vE3KvA14EcgR8FvhpFm45cRbcTsB9sTZ1LG+Pifl0pigknXak3Bq9XV9vANJiLSoA+VKrF8nLhJwKPVfxaw27ec/ZrL8uCkKSSeJnBqNiOT8D5UooihEPitZQz5I66P6dd</l7:Encoded>
+                        </l7:CertificateData>
+                    </l7:CertificateChain>
+                    <l7:Properties>
+                        <l7:Property key="keyAlgorithm">
+                            <l7:StringValue>RSA</l7:StringValue>
+                        </l7:Property>
+                        <l7:Property key="keyData">
+                            <l7:StringValue algorithm="RSA" bundleKey="$L7C2$1bead,XGCm0whm10yRn7RtnmZflEtcMnzmcZxyxWOBTwaOdB4=$B0m4SCLC6mSG1OoHGC3tgUmhyX+xCnJ0lCU3nyac8AVXPrIzWBM1iLggJxZmcRx5eijmFqYzqLfOsqb0rpskcPMPccQK1KYIgMAhuOP8/nhjYa/SNw9Ca0YuR+LYR5Xn">$L7C2$1,syYBouobiwohkubiLKf6hg2WE9XquJquA64FKoC+LKQ=$1rOZuw0DfJruNipADTiQ+dk/aZ9vrhbK82XwHa7WjDmU/zmn0ABxEJIt8KBb2avtZUu/feI9LQWUfPawO9IUDHNWVfQUuzzj1RIuMdl6EHg50luw3HAcYEvgp1y0KzbV5xzZgU/NeezWL+yMp8QKxjRjOkJVEe35lFcV1Ds/v0xQ1zj0OIdLSREejBfjmUgY7iyrt8QitrQ/1LTVeh9uY9hCsqMCn7qy5aTGwPQkbYBuL9rGumM6FI+oD02TZCTl04waWpvfKKyLIS8cj74eGeDWbNOef1Oz88CqwjMo/0SZA88roBLYZbV7WbaWWghqg5I7TpNMM0fS/UwrSx45qAEiUEoIUohZntxIy51LP1ZypMjlhhjd4EQgDwrNNaKSwlwEAWyE3IJNcrznyVA6sWwZkxst8LZH00sYUChl1quI87mv0NLSsGHZMstq4kYBQfOBlEwcfxTmuhCBOPLfXQpznFCTpk/IVPU8QQtu7nSNpHvkJoVwzc7mqeT3Dns0Lr1TVwqFVhPn+8tN99oI9fKLf9Ln88vGCnaawV1nj8dGEt89aDAqAYkzRNB4SvIqOM0zKuz/HDYXW4ZkGWTZEv17L3rhNNwUybHusyRIh+WCzvxB14+mNJnPevC9YyWM/r5Qm0TRAEMAow3NuLS20ygoVtqsIt0s3Pi6sHsLM8IPCDKZYt+Iiq/uc/cCvEJJF4p1nUr1mbrFB3HzCWlcupO+BEqzwnnyuxvgnRfF2XbgySRnd6c3loA1DMIlOaEGOyXFFShNY4B5eQixVSSkfksC18JwFNUzXOqFa3WLiMKoMAaPPs7smZ1bgMFVIgC6fjw0aKI1x8REegj/6kFZoXV/YUEHiPLWGuzhD4LxK7r10wLizaiQ4pK1vdIWaM374VgoaSOjlS9Fogtv6yRe1ttellzdXS+vF5dgU7or1eM9k/jo26U29LVds8pAW+oveDCKdRBTZYc9JvUbIOCdYRhjmGbZZ5t5kA6uKvBZt1I+5T7wwJ+1ZCDJCRrW//+DPOlGJwt0T84hSNaCm77WstUGx20ddxzRAffy8I/gc0kW1clqyy70Owo3Jxef+sRmhDoMkREXzzJC47mSzMmLBSAKAHkDeFSKtMF5tV3y+AQzXv6SDwC+x7Udz/HcdefyfE56ek7jLdMRbtIFfiDKheA+VBTXmWYQ+uAyiU78iA05HpXWsFUauU3TSzi7Cho4Hd2lyIdVnFqEhOZPQkpn3/FZO+BKUzxuVWmY1LNkOGf1e3astPUW3yU/CtuNBWevAY4roDetOZOVuNqKom/IX//DVESImt5oY6C5Le/yE1v7lZi9IY/SUFUFa/gxfVc/J4SLp9YokwDs6f/a5h5DU5SAaaQ6UaQAWfD/FgdLvWSzb1OGmHhEw9tvjogApRmwWkozfKkb+z3r/yXM+AV36dFgALGq8+szcnolXOlI7Im/S85vN9nRgXdldLKPTO7UY4Ccxr0U3Q2NQ50ReUIDGJlrLrGhbPWg8zLN8cOHzbBC13JEi4Kxq9ArtLa+Ul5qqMvYRifmH+lha5YfOjnu5TUj8m5zme1clGtpo1BJQr2M1zb1gOzadpRur/+jmcs5Lx5aW2tn0t9Xt0JEknDsT0onheKX6cKrJhteVZ8KTo4zjAAX4Wl5w31ceRaNy7NvTdBZkgb1EzsuVdcaLZNLn8+uERojoCmI9bhPMrGjzOY=</l7:StringValue>
+                        </l7:Property>
+                        <l7:Property key="specialPurposes">
+                            <l7:StringValue>Default SSL Key</l7:StringValue>
+                        </l7:Property>
+                    </l7:Properties>
+                </l7:PrivateKey>
+            </l7:Resource>
+        </l7:Item>
+        <l7:Item>
+            <l7:Name>OAuth2Jwt</l7:Name>
+            <l7:Id>1289c4243bdc79f0cb8808a6b1e88016</l7:Id>
+            <l7:Type>POLICY</l7:Type>
+            <l7:TimeStamp>2018-02-28T20:45:16.504Z</l7:TimeStamp>
+            <l7:Resource>
+                <l7:Policy guid="99aa7dab-fe7f-45bc-a9ef-a89622e7f763" id="1289c4243bdc79f0cb8808a6b1e88016" version="6">
+                    <l7:PolicyDetail folderId="411c6172361ed504c894e9deee516b17" guid="99aa7dab-fe7f-45bc-a9ef-a89622e7f763" id="1289c4243bdc79f0cb8808a6b1e88016" version="6">
+                        <l7:Name>OAuth2Jwt</l7:Name>
+                        <l7:PolicyType>Include</l7:PolicyType>
+                        <l7:Properties>
+                            <l7:Property key="revision">
+                                <l7:LongValue>6</l7:LongValue>
+                            </l7:Property>
+                            <l7:Property key="soap">
+                                <l7:BooleanValue>false</l7:BooleanValue>
+                            </l7:Property>
+                        </l7:Properties>
+                    </l7:PolicyDetail>
+                    <l7:Resources>
+                        <l7:ResourceSet tag="policy">
+                            <l7:Resource type="policy">&lt;?xml version="1.0" encoding="UTF-8"?&gt;
+&lt;wsp:Policy xmlns:L7p="http://www.layer7tech.com/ws/policy" xmlns:wsp="http://schemas.xmlsoap.org/ws/2002/12/policy"&gt;
+    &lt;wsp:All wsp:Usage="Required"&gt;
+        &lt;wsp:OneOrMore wsp:Usage="Required"&gt;
+            &lt;wsp:All wsp:Usage="Required"&gt;
+                &lt;L7p:MapValue&gt;
+                    &lt;L7p:InputExpr stringValue="${request.http.header.Authorization}"/&gt;
+                    &lt;L7p:Mappings nameValuePairArray="included"&gt;
+                        &lt;L7p:item nameValuePair="included"&gt;
+                            &lt;L7p:Key stringValue="Bearer (.*)"/&gt;
+                            &lt;L7p:Value stringValue="${1}"/&gt;
+                        &lt;/L7p:item&gt;
+                    &lt;/L7p:Mappings&gt;
+                    &lt;L7p:OutputVar stringValue="accessToken"/&gt;
+                &lt;/L7p:MapValue&gt;
+                &lt;L7p:HttpRoutingAssertion&gt;
+                    &lt;L7p:Login stringValue="${clientId}"/&gt;
+                    &lt;L7p:PassThroughSoapFaults booleanValue="false"/&gt;
+                    &lt;L7p:Password stringValue="${clientPassword}"/&gt;
+                    &lt;L7p:ProtectedServiceUrl stringValue="${tokenValidationUri}?token=${accessToken}"/&gt;
+                    &lt;L7p:ProxyPassword stringValueNull="null"/&gt;
+                    &lt;L7p:ProxyUsername stringValueNull="null"/&gt;
+                    &lt;L7p:RequestHeaderRules httpPassthroughRuleSet="included"&gt;
+                        &lt;L7p:ForwardAll booleanValue="true"/&gt;
+                        &lt;L7p:Rules httpPassthroughRules="included"&gt;
+                            &lt;L7p:item httpPassthroughRule="included"&gt;
+                                &lt;L7p:Name stringValue="Cookie"/&gt;
+                            &lt;/L7p:item&gt;
+                            &lt;L7p:item httpPassthroughRule="included"&gt;
+                                &lt;L7p:Name stringValue="SOAPAction"/&gt;
+                            &lt;/L7p:item&gt;
+                        &lt;/L7p:Rules&gt;
+                    &lt;/L7p:RequestHeaderRules&gt;
+                    &lt;L7p:RequestParamRules httpPassthroughRuleSet="included"&gt;
+                        &lt;L7p:ForwardAll booleanValue="true"/&gt;
+                        &lt;L7p:Rules httpPassthroughRules="included"/&gt;
+                    &lt;/L7p:RequestParamRules&gt;
+                    &lt;L7p:ResponseHeaderRules httpPassthroughRuleSet="included"&gt;
+                        &lt;L7p:ForwardAll booleanValue="true"/&gt;
+                        &lt;L7p:Rules httpPassthroughRules="included"&gt;
+                            &lt;L7p:item httpPassthroughRule="included"&gt;
+                                &lt;L7p:Name stringValue="Set-Cookie"/&gt;
+                            &lt;/L7p:item&gt;
+                        &lt;/L7p:Rules&gt;
+                    &lt;/L7p:ResponseHeaderRules&gt;
+                    &lt;L7p:ResponseMsgDest stringValue="auth.response"/&gt;
+                    &lt;L7p:SamlAssertionVersion intValue="2"/&gt;
+                &lt;/L7p:HttpRoutingAssertion&gt;
+                &lt;L7p:EncodeJsonWebToken&gt;
+                    &lt;L7p:SignPayload booleanValue="true"/&gt;
+                    &lt;L7p:SignatureAlgorithm stringValue="HS256"/&gt;
+                    &lt;L7p:SignatureSecretKey stringValue="hWmZq4t7w!z%C*F-JaNdRgUkXn2r5u8x"/&gt;
+                    &lt;L7p:SourceVariable stringValue="${auth.response.mainpart}"/&gt;
+                    &lt;L7p:TargetVariable stringValue="apigw"/&gt;
+                &lt;/L7p:EncodeJsonWebToken&gt;
+                &lt;L7p:AddHeader&gt;
+                    &lt;L7p:HeaderName stringValue="x-apigw-jwt"/&gt;
+                    &lt;L7p:HeaderValue stringValue="${apigw.compact}"/&gt;
+                    &lt;L7p:RemoveExisting booleanValue="true"/&gt;
+                &lt;/L7p:AddHeader&gt;
+                &lt;L7p:assertionComment&gt;
+                    &lt;L7p:Properties mapValue="included"&gt;
+                        &lt;L7p:entry&gt;
+                            &lt;L7p:key stringValue="LEFT.COMMENT"/&gt;
+                            &lt;L7p:value stringValue="Success"/&gt;
+                        &lt;/L7p:entry&gt;
+                    &lt;/L7p:Properties&gt;
+                &lt;/L7p:assertionComment&gt;
+            &lt;/wsp:All&gt;
+            &lt;wsp:All wsp:Usage="Required"&gt;
+                &lt;L7p:CustomizeErrorResponse&gt;
+                    &lt;L7p:Content stringValue="{&amp;quot;gatewayFault&amp;quot;:{&amp;quot;message&amp;quot;:&amp;quot;gateway unauthorized error&amp;quot;,&amp;quot;code&amp;quot;:401,&amp;quot;subCode&amp;quot;:&amp;quot;GATEWAY_UNAUTHORIZED&amp;quot;,&amp;quot;details&amp;quot;:&amp;quot;A client does not have the proper credentials to access the given resource.&amp;quot;}}"/&gt;
+                    &lt;L7p:ContentType stringValue="application/json"/&gt;
+                    &lt;L7p:ExtraHeaders nameValuePairArray="included"/&gt;
+                    &lt;L7p:HttpStatus stringValue="401"/&gt;
+                &lt;/L7p:CustomizeErrorResponse&gt;
+                &lt;L7p:FalseAssertion/&gt;
+                &lt;L7p:assertionComment&gt;
+                    &lt;L7p:Properties mapValue="included"&gt;
+                        &lt;L7p:entry&gt;
+                            &lt;L7p:key stringValue="LEFT.COMMENT"/&gt;
+                            &lt;L7p:value stringValue="Fail"/&gt;
+                        &lt;/L7p:entry&gt;
+                    &lt;/L7p:Properties&gt;
+                &lt;/L7p:assertionComment&gt;
+            &lt;/wsp:All&gt;
+            &lt;L7p:assertionComment&gt;
+                &lt;L7p:Properties mapValue="included"&gt;
+                    &lt;L7p:entry&gt;
+                        &lt;L7p:key stringValue="LEFT.COMMENT"/&gt;
+                        &lt;L7p:value stringValue="Try"/&gt;
+                    &lt;/L7p:entry&gt;
+                &lt;/L7p:Properties&gt;
+            &lt;/L7p:assertionComment&gt;
+        &lt;/wsp:OneOrMore&gt;
+    &lt;/wsp:All&gt;
+&lt;/wsp:Policy&gt;
+</l7:Resource>
+                        </l7:ResourceSet>
+                    </l7:Resources>
+                </l7:Policy>
+            </l7:Resource>
+        </l7:Item>
+        <l7:Item>
+            <l7:Name>microrouter</l7:Name>
+            <l7:Id>411c6172361ed504c894e9deee516aed</l7:Id>
+            <l7:Type>POLICY</l7:Type>
+            <l7:TimeStamp>2018-02-28T20:45:16.508Z</l7:TimeStamp>
+            <l7:Resource>
+                <l7:Policy guid="b17742f0-3aea-4330-98b0-d2df5e671cd0" id="411c6172361ed504c894e9deee516aed" version="2">
+                    <l7:PolicyDetail folderId="411c6172361ed504c894e9deee516b17" guid="b17742f0-3aea-4330-98b0-d2df5e671cd0" id="411c6172361ed504c894e9deee516aed" version="2">
+                        <l7:Name>microrouter</l7:Name>
+                        <l7:PolicyType>Include</l7:PolicyType>
+                        <l7:Properties>
+                            <l7:Property key="revision">
+                                <l7:LongValue>2</l7:LongValue>
+                            </l7:Property>
+                            <l7:Property key="soap">
+                                <l7:BooleanValue>false</l7:BooleanValue>
+                            </l7:Property>
+                        </l7:Properties>
+                    </l7:PolicyDetail>
+                    <l7:Resources>
+                        <l7:ResourceSet tag="policy">
+                            <l7:Resource type="policy">&lt;?xml version="1.0" encoding="UTF-8"?&gt;
+&lt;wsp:Policy xmlns:L7p="http://www.layer7tech.com/ws/policy" xmlns:wsp="http://schemas.xmlsoap.org/ws/2002/12/policy"&gt;
+    &lt;wsp:All wsp:Usage="Required"&gt;
+        &lt;L7p:MapValue&gt;
+            &lt;L7p:InputExpr stringValue="${request.http.uri}"/&gt;
+            &lt;L7p:Mappings nameValuePairArray="included"&gt;
+                &lt;L7p:item nameValuePair="included"&gt;
+                    &lt;L7p:Key stringValue="^/v1/(.*)"/&gt;
+                    &lt;L7p:Value stringValue="${1}"/&gt;
+                &lt;/L7p:item&gt;
+            &lt;/L7p:Mappings&gt;
+            &lt;L7p:OutputVar stringValue="micro.uri"/&gt;
+        &lt;/L7p:MapValue&gt;
+    &lt;/wsp:All&gt;
+&lt;/wsp:Policy&gt;
+</l7:Resource>
+                        </l7:ResourceSet>
+                    </l7:Resources>
+                </l7:Policy>
+            </l7:Resource>
+        </l7:Item>
+        <l7:Item>
+            <l7:Name>OAuth2Jwt</l7:Name>
+            <l7:Id>1289c4243bdc79f0cb8808a6b1e8802c</l7:Id>
+            <l7:Type>ENCAPSULATED_ASSERTION</l7:Type>
+            <l7:TimeStamp>2018-02-28T20:45:16.517Z</l7:TimeStamp>
+            <l7:Resource>
+                <l7:EncapsulatedAssertion id="1289c4243bdc79f0cb8808a6b1e8802c" version="5">
+                    <l7:Name>OAuth2Jwt</l7:Name>
+                    <l7:Guid>4e3a2549-53c1-4a9c-83e5-015adf3407a0</l7:Guid>
+                    <l7:PolicyReference id="1289c4243bdc79f0cb8808a6b1e88016" resourceUri="http://ns.l7tech.com/2010/04/gateway-management/policies"/>
+                    <l7:EncapsulatedArguments>
+                        <l7:EncapsulatedAssertionArgument>
+                            <l7:Ordinal>1</l7:Ordinal>
+                            <l7:ArgumentName>clientId</l7:ArgumentName>
+                            <l7:ArgumentType>string</l7:ArgumentType>
+                            <l7:GuiLabel>clientId</l7:GuiLabel>
+                            <l7:GuiPrompt>true</l7:GuiPrompt>
+                        </l7:EncapsulatedAssertionArgument>
+                        <l7:EncapsulatedAssertionArgument>
+                            <l7:Ordinal>2</l7:Ordinal>
+                            <l7:ArgumentName>clientPassword</l7:ArgumentName>
+                            <l7:ArgumentType>string</l7:ArgumentType>
+                            <l7:GuiLabel>clientPassword</l7:GuiLabel>
+                            <l7:GuiPrompt>true</l7:GuiPrompt>
+                        </l7:EncapsulatedAssertionArgument>
+                        <l7:EncapsulatedAssertionArgument>
+                            <l7:Ordinal>3</l7:Ordinal>
+                            <l7:ArgumentName>tokenValidationUri</l7:ArgumentName>
+                            <l7:ArgumentType>string</l7:ArgumentType>
+                            <l7:GuiLabel>tokenValidationUri</l7:GuiLabel>
+                            <l7:GuiPrompt>true</l7:GuiPrompt>
+                        </l7:EncapsulatedAssertionArgument>
+                    </l7:EncapsulatedArguments>
+                    <l7:EncapsulatedResults/>
+                    <l7:Properties>
+                        <l7:Property key="allowTracing">
+                            <l7:StringValue>false</l7:StringValue>
+                        </l7:Property>
+                        <l7:Property key="description">
+                            <l7:StringValue>Validate OAuth2 token and upon validation, create a signed JWT token in header x-apigw-jwt to capture the principal information.  This assertion will fail if token validation fails.</l7:StringValue>
+                        </l7:Property>
+                        <l7:Property key="paletteFolder">
+                            <l7:StringValue>accessControl</l7:StringValue>
+                        </l7:Property>
+                        <l7:Property key="passMetricsToParent">
+                            <l7:StringValue>false</l7:StringValue>
+                        </l7:Property>
+                        <l7:Property key="policyGuid">
+                            <l7:StringValue>99aa7dab-fe7f-45bc-a9ef-a89622e7f763</l7:StringValue>
+                        </l7:Property>
+                    </l7:Properties>
+                </l7:EncapsulatedAssertion>
+            </l7:Resource>
+        </l7:Item>
+        <l7:Item>
+            <l7:Name>JwtTest</l7:Name>
+            <l7:Id>411c6172361ed504c894e9deee516aa4</l7:Id>
+            <l7:Type>SERVICE</l7:Type>
+            <l7:TimeStamp>2018-02-28T20:45:16.553Z</l7:TimeStamp>
+            <l7:Resource>
+                <l7:Service id="411c6172361ed504c894e9deee516aa4" version="3">
+                    <l7:ServiceDetail folderId="411c6172361ed504c894e9deee516b17" id="411c6172361ed504c894e9deee516aa4" version="3">
+                        <l7:Name>JwtTest</l7:Name>
+                        <l7:Enabled>true</l7:Enabled>
+                        <l7:ServiceMappings>
+                            <l7:HttpMapping>
+                                <l7:UrlPattern>/jwttest</l7:UrlPattern>
+                                <l7:Verbs>
+                                    <l7:Verb>GET</l7:Verb>
+                                    <l7:Verb>POST</l7:Verb>
+                                    <l7:Verb>PUT</l7:Verb>
+                                    <l7:Verb>DELETE</l7:Verb>
+                                </l7:Verbs>
+                            </l7:HttpMapping>
+                        </l7:ServiceMappings>
+                        <l7:Properties>
+                            <l7:Property key="internal">
+                                <l7:BooleanValue>false</l7:BooleanValue>
+                            </l7:Property>
+                            <l7:Property key="policyRevision">
+                                <l7:LongValue>3</l7:LongValue>
+                            </l7:Property>
+                            <l7:Property key="soap">
+                                <l7:BooleanValue>false</l7:BooleanValue>
+                            </l7:Property>
+                            <l7:Property key="tracingEnabled">
+                                <l7:BooleanValue>false</l7:BooleanValue>
+                            </l7:Property>
+                            <l7:Property key="wssProcessingEnabled">
+                                <l7:BooleanValue>false</l7:BooleanValue>
+                            </l7:Property>
+                        </l7:Properties>
+                    </l7:ServiceDetail>
+                    <l7:Resources>
+                        <l7:ResourceSet tag="policy">
+                            <l7:Resource type="policy" version="3">&lt;?xml version="1.0" encoding="UTF-8"?&gt;
+&lt;wsp:Policy xmlns:L7p="http://www.layer7tech.com/ws/policy" xmlns:wsp="http://schemas.xmlsoap.org/ws/2002/12/policy"&gt;
+    &lt;wsp:All wsp:Usage="Required"&gt;
+        &lt;L7p:Encapsulated&gt;
+            &lt;L7p:EncapsulatedAssertionConfigGuid stringValue="4e3a2549-53c1-4a9c-83e5-015adf3407a0"/&gt;
+            &lt;L7p:EncapsulatedAssertionConfigName stringValue="OAuth2Jwt"/&gt;
+            &lt;L7p:Parameters mapValue="included"&gt;
+                &lt;L7p:entry&gt;
+                    &lt;L7p:key stringValue="clientId"/&gt;
+                    &lt;L7p:value stringValue="apigw"/&gt;
+                &lt;/L7p:entry&gt;
+                &lt;L7p:entry&gt;
+                    &lt;L7p:key stringValue="clientPassword"/&gt;
+                    &lt;L7p:value stringValue=""/&gt;
+                &lt;/L7p:entry&gt;
+                &lt;L7p:entry&gt;
+                    &lt;L7p:key stringValue="tokenValidationUri"/&gt;
+                    &lt;L7p:value stringValue="http://oauth2server:9999/oauth/check_token"/&gt;
+                &lt;/L7p:entry&gt;
+            &lt;/L7p:Parameters&gt;
+        &lt;/L7p:Encapsulated&gt;
+        &lt;L7p:HardcodedResponse&gt;
+            &lt;L7p:Base64ResponseBody stringValue="JHtyZXF1ZXN0Lmh0dHAuaGVhZGVyLngtYXBpZ3ctand0fQ=="/&gt;
+            &lt;L7p:ResponseContentType stringValue="text/plain"/&gt;
+        &lt;/L7p:HardcodedResponse&gt;
+    &lt;/wsp:All&gt;
+&lt;/wsp:Policy&gt;
+</l7:Resource>
+                        </l7:ResourceSet>
+                    </l7:Resources>
+                </l7:Service>
+            </l7:Resource>
+        </l7:Item>
+        <l7:Item>
+            <l7:Name>MovieSubscription</l7:Name>
+            <l7:Id>655c5f538f8f372384ff5d5292ddeec5</l7:Id>
+            <l7:Type>SERVICE</l7:Type>
+            <l7:TimeStamp>2018-02-28T20:45:16.564Z</l7:TimeStamp>
+            <l7:Resource>
+                <l7:Service id="655c5f538f8f372384ff5d5292ddeec5" version="6">
+                    <l7:ServiceDetail folderId="411c6172361ed504c894e9deee516b17" id="655c5f538f8f372384ff5d5292ddeec5" version="6">
+                        <l7:Name>MovieSubscription</l7:Name>
+                        <l7:Enabled>true</l7:Enabled>
+                        <l7:ServiceMappings>
+                            <l7:HttpMapping>
+                                <l7:UrlPattern>/v1/*</l7:UrlPattern>
+                                <l7:Verbs>
+                                    <l7:Verb>GET</l7:Verb>
+                                    <l7:Verb>POST</l7:Verb>
+                                    <l7:Verb>PUT</l7:Verb>
+                                    <l7:Verb>DELETE</l7:Verb>
+                                </l7:Verbs>
+                            </l7:HttpMapping>
+                        </l7:ServiceMappings>
+                        <l7:Properties>
+                            <l7:Property key="internal">
+                                <l7:BooleanValue>false</l7:BooleanValue>
+                            </l7:Property>
+                            <l7:Property key="policyRevision">
+                                <l7:LongValue>6</l7:LongValue>
+                            </l7:Property>
+                            <l7:Property key="soap">
+                                <l7:BooleanValue>false</l7:BooleanValue>
+                            </l7:Property>
+                            <l7:Property key="tracingEnabled">
+                                <l7:BooleanValue>false</l7:BooleanValue>
+                            </l7:Property>
+                            <l7:Property key="wssProcessingEnabled">
+                                <l7:BooleanValue>false</l7:BooleanValue>
+                            </l7:Property>
+                        </l7:Properties>
+                    </l7:ServiceDetail>
+                    <l7:Resources>
+                        <l7:ResourceSet tag="policy">
+                            <l7:Resource type="policy" version="6">&lt;?xml version="1.0" encoding="UTF-8"?&gt;
+&lt;wsp:Policy xmlns:L7p="http://www.layer7tech.com/ws/policy" xmlns:wsp="http://schemas.xmlsoap.org/ws/2002/12/policy"&gt;
+    &lt;wsp:All wsp:Usage="Required"&gt;
+        &lt;L7p:Encapsulated&gt;
+            &lt;L7p:EncapsulatedAssertionConfigGuid stringValue="4e3a2549-53c1-4a9c-83e5-015adf3407a0"/&gt;
+            &lt;L7p:EncapsulatedAssertionConfigName stringValue="OAuth2Jwt"/&gt;
+            &lt;L7p:Parameters mapValue="included"&gt;
+                &lt;L7p:entry&gt;
+                    &lt;L7p:key stringValue="clientId"/&gt;
+                    &lt;L7p:value stringValue="apigw"/&gt;
+                &lt;/L7p:entry&gt;
+                &lt;L7p:entry&gt;
+                    &lt;L7p:key stringValue="clientPassword"/&gt;
+                    &lt;L7p:value stringValue=""/&gt;
+                &lt;/L7p:entry&gt;
+                &lt;L7p:entry&gt;
+                    &lt;L7p:key stringValue="tokenValidationUri"/&gt;
+                    &lt;L7p:value stringValue="http://oauth2server:9999/oauth/check_token"/&gt;
+                &lt;/L7p:entry&gt;
+            &lt;/L7p:Parameters&gt;
+        &lt;/L7p:Encapsulated&gt;
+        &lt;L7p:Include&gt;
+            &lt;L7p:PolicyGuid stringValue="b17742f0-3aea-4330-98b0-d2df5e671cd0"/&gt;
+        &lt;/L7p:Include&gt;
+        &lt;L7p:HttpRoutingAssertion&gt;
+            &lt;L7p:FailOnErrorStatus booleanValue="false"/&gt;
+            &lt;L7p:PassThroughSoapFaults booleanValue="false"/&gt;
+            &lt;L7p:ProtectedServiceUrl stringValue="http://subscriptionservice:8889/${micro.uri}${request.url.query}"/&gt;
+            &lt;L7p:ProxyPassword stringValueNull="null"/&gt;
+            &lt;L7p:ProxyUsername stringValueNull="null"/&gt;
+            &lt;L7p:RequestHeaderRules httpPassthroughRuleSet="included"&gt;
+                &lt;L7p:ForwardAll booleanValue="true"/&gt;
+                &lt;L7p:Rules httpPassthroughRules="included"&gt;
+                    &lt;L7p:item httpPassthroughRule="included"&gt;
+                        &lt;L7p:Name stringValue="Cookie"/&gt;
+                    &lt;/L7p:item&gt;
+                    &lt;L7p:item httpPassthroughRule="included"&gt;
+                        &lt;L7p:Name stringValue="SOAPAction"/&gt;
+                    &lt;/L7p:item&gt;
+                &lt;/L7p:Rules&gt;
+            &lt;/L7p:RequestHeaderRules&gt;
+            &lt;L7p:RequestParamRules httpPassthroughRuleSet="included"&gt;
+                &lt;L7p:ForwardAll booleanValue="true"/&gt;
+                &lt;L7p:Rules httpPassthroughRules="included"/&gt;
+            &lt;/L7p:RequestParamRules&gt;
+            &lt;L7p:ResponseHeaderRules httpPassthroughRuleSet="included"&gt;
+                &lt;L7p:ForwardAll booleanValue="true"/&gt;
+                &lt;L7p:Rules httpPassthroughRules="included"&gt;
+                    &lt;L7p:item httpPassthroughRule="included"&gt;
+                        &lt;L7p:Name stringValue="Set-Cookie"/&gt;
+                    &lt;/L7p:item&gt;
+                &lt;/L7p:Rules&gt;
+            &lt;/L7p:ResponseHeaderRules&gt;
+        &lt;/L7p:HttpRoutingAssertion&gt;
+    &lt;/wsp:All&gt;
+&lt;/wsp:Policy&gt;
+</l7:Resource>
+                        </l7:ResourceSet>
+                    </l7:Resources>
+                </l7:Service>
+            </l7:Resource>
+        </l7:Item>
+    </l7:References>
+    <l7:Mappings>
+        <l7:Mapping action="NewOrExisting" srcId="0000000000000000ffffffffffffec76" srcUri="https://1825f753bb63:8443/restman/1.0/folders/0000000000000000ffffffffffffec76" type="FOLDER">
+            <l7:Properties>
+                <l7:Property key="FailOnNew">
+                    <l7:BooleanValue>true</l7:BooleanValue>
+                </l7:Property>
+            </l7:Properties>
+        </l7:Mapping>
+        <l7:Mapping action="NewOrExisting" srcId="411c6172361ed504c894e9deee516b17" srcUri="https://1825f753bb63:8443/restman/1.0/folders/411c6172361ed504c894e9deee516b17" type="FOLDER"/>
+        <l7:Mapping action="NewOrExisting" srcId="00000000000000000000000000000002:SSL" srcUri="https://1825f753bb63:8443/restman/1.0/privateKeys/00000000000000000000000000000002:SSL" type="SSG_KEY_ENTRY"/>
+        <l7:Mapping action="NewOrExisting" srcId="1289c4243bdc79f0cb8808a6b1e88016" srcUri="https://1825f753bb63:8443/restman/1.0/policies/1289c4243bdc79f0cb8808a6b1e88016" type="POLICY"/>
+        <l7:Mapping action="NewOrExisting" srcId="411c6172361ed504c894e9deee516aed" srcUri="https://1825f753bb63:8443/restman/1.0/policies/411c6172361ed504c894e9deee516aed" type="POLICY"/>
+        <l7:Mapping action="NewOrExisting" srcId="1289c4243bdc79f0cb8808a6b1e8802c" srcUri="https://1825f753bb63:8443/restman/1.0/encapsulatedAssertions/1289c4243bdc79f0cb8808a6b1e8802c" type="ENCAPSULATED_ASSERTION"/>
+        <l7:Mapping action="NewOrExisting" srcId="411c6172361ed504c894e9deee516aa4" srcUri="https://1825f753bb63:8443/restman/1.0/services/411c6172361ed504c894e9deee516aa4" type="SERVICE"/>
+        <l7:Mapping action="NewOrExisting" srcId="655c5f538f8f372384ff5d5292ddeec5" srcUri="https://1825f753bb63:8443/restman/1.0/services/655c5f538f8f372384ff5d5292ddeec5" type="SERVICE"/>
+    </l7:Mappings>
+</l7:Bundle>
