@@ -1,4 +1,4 @@
-package com.dxc.microservices.subscription;
+package com.dxc.microservices.subscription.security;
 
 import java.io.IOException;
 import java.io.UnsupportedEncodingException;
