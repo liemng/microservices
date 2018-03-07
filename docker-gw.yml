@@ -38,32 +38,3 @@ services:
       test: /usr/bin/mysql --user=root --password=7layer --execute "SHOW DATABASES;"
       interval: 10s
       timeout: 10s
-  oauth2server:
-    image: liemmn/dxc-oauth2-server:microservices
-    ports:
-    - 9999:9999
-    healthcheck:
-      test: ["CMD", "curl", "-f", "http://localhost:9999/health"]
-  configserver:
-    image: liemmn/dxc-config-server:microservices
-    ports:
-    - 8888:8888
-    environment:
-      ENCRYPT_KEY: IMSYMMETRIC
-    healthcheck:
-      test: ["CMD", "curl", "-f", "http://localhost:8888/health"]
-  subscriptionservice:
-    image: liemmn/dxc-subscription-service:microservices
-    ports:
-    - 8889:8889
-    environment:
-      PROFILE: docker
-      CONFIGSERVER_URI: http://configserver:8888
-      ENCRYPT_KEY: IMSYMMETRIC
-    healthcheck:
-      test: ["CMD", "curl", "-f", "http://localhost:8889/health"]
-    depends_on:
-      database:
-        condition: service_healthy
-      configserver:
-        condition: service_healthy

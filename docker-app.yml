@@ -1,0 +1,40 @@
+version: '2.1'
+services:
+  configserver:
+    image: liemmn/dxc-config-server:microservices
+    ports:
+    - 8888:8888
+    environment:
+      ENCRYPT_KEY: IMSYMMETRIC
+    healthcheck:
+      test: ["CMD", "curl", "-f", "http://localhost:8888/health"]
+  subscriptionservice:
+    image: liemmn/dxc-subscription-service:microservices
+    ports:
+    - 8889:8889
+    environment:
+      PROFILE: docker
+      CONFIGSERVER_URI: http://configserver:8888
+      KAFKASERVER_URI: kafkaserver
+      ZKSERVER_URI: kafkaserver
+      ENCRYPT_KEY: IMSYMMETRIC
+    healthcheck:
+      test: ["CMD", "curl", "-f", "http://localhost:8889/health"]
+    depends_on:
+      configserver:
+        condition: service_healthy
+  billingservice:
+    image: liemmn/dxc-billing-service:microservices
+    ports:
+    - 8890:8890
+    environment:
+      PROFILE: docker
+      CONFIGSERVER_URI: http://configserver:8888
+      KAFKASERVER_URI: kafkaserver
+      ZKSERVER_URI: kafkaserver
+      ENCRYPT_KEY: IMSYMMETRIC
+    healthcheck:
+      test: ["CMD", "curl", "-f", "http://localhost:8890/health"]
+    depends_on:
+      configserver:
+        condition: service_healthy

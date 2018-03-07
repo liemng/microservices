@@ -9,10 +9,10 @@
 		<version>1.5.10.RELEASE</version>
 	</parent>
 	<groupId>com.dxc.microservices</groupId>
-	<artifactId>subscription</artifactId>
+	<artifactId>billing</artifactId>
 	<version>1.0.0-SNAPSHOT</version>
-	<name>Subscription Microservice</name>
-	<description>Subscription Microservice to keep track of subscriptions by customers</description>
+	<name>Billing Microservice</name>
+	<description>Billing Microservice to keep track of charges and balances of customer accounts</description>
 
 	<dependencyManagement>
 		<dependencies>
@@ -29,8 +29,8 @@
 	<properties>
 		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
 		<java.version>1.8</java.version>
-		<start-class>com.dxc.microservices.subscription.SubscriptionApplication</start-class>
-		<docker.image.name>liemmn/dxc-subscription-service</docker.image.name>
+		<start-class>com.dxc.microservices.billing.BillingApplication</start-class>
+		<docker.image.name>liemmn/dxc-billing-service</docker.image.name>
 		<docker.image.tag>microservices</docker.image.tag>
 	</properties>
 
@@ -66,16 +66,6 @@
 		<dependency>
 			<groupId>org.springframework.security</groupId>
 			<artifactId>spring-security-rsa</artifactId>
-		</dependency>
-		<!-- Security -->
-		<dependency>
-			<groupId>org.springframework.boot</groupId>
-			<artifactId>spring-boot-starter-security</artifactId>
-		</dependency>
-		<dependency>
-			<groupId>io.jsonwebtoken</groupId>
-			<artifactId>jjwt</artifactId>
-			<version>0.8.0</version>
 		</dependency>
 		<!-- Eventing -->
 		<dependency>

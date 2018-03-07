@@ -1,0 +1,17 @@
+version: '2.1'
+services:
+  oauth2server:
+    image: liemmn/dxc-oauth2-server:microservices
+    ports:
+    - 9999:9999
+    healthcheck:
+      test: ["CMD", "curl", "-f", "http://localhost:9999/health"]
+  kafkaserver:
+    image: spotify/kafka
+    ports:
+    - 2181:2181
+    - 9092:9092
+# Environment for running microservices on Eclipse 
+#    environment:
+#      ADVERTISED_HOST: localhost
+#      ADVERTISED_PORT: 9092

@@ -1,0 +1,9 @@
+spring:
+  application:
+    name: billingservice
+  profiles:
+    active:
+      default
+  cloud:
+    config:
+      enabled: true

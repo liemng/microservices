@@ -14,6 +14,7 @@
     <module>configserver</module>
     <module>oauth2server</module>
     <module>subscription</module>
+    <module>billing</module>
   </modules>
 
   <build>

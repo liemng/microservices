@@ -43,4 +43,7 @@ public class Movie {
         this.price = price;
     }
 
+    public String toString() {
+        return this.getTitle();
+    }
 }

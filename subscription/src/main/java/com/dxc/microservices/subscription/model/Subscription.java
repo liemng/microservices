@@ -61,4 +61,7 @@ public class Subscription {
         this.customerId = customerId;
     }
 
+    public String toString() {
+        return "Subscription for customer " + this.getCustomerId();
+    }
 }
