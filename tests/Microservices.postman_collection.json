@@ -198,6 +198,20 @@
 				},
 				{
 					"name": "List accounts",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"id": "a58ec230-2c86-40c2-9ab7-c9b7efc437c9",
+								"type": "text/javascript",
+								"exec": [
+									"pm.test(\"Status code is 200\", function () {",
+									"    pm.response.to.have.status(200);",
+									"});"
+								]
+							}
+						}
+					],
 					"request": {
 						"auth": {
 							"type": "noauth"
@@ -226,6 +240,20 @@
 				},
 				{
 					"name": "Credit account",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"id": "2f75a307-e378-432c-a84c-7ef83c3bbbbd",
+								"type": "text/javascript",
+								"exec": [
+									"pm.test(\"Status code is 200\", function () {",
+									"    pm.response.to.have.status(200);",
+									"});"
+								]
+							}
+						}
+					],
 					"request": {
 						"auth": {
 							"type": "noauth"
@@ -235,6 +263,10 @@
 							{
 								"key": "Content-Type",
 								"value": "application/json"
+							},
+							{
+								"key": "x-apigw-jwt",
+								"value": "{{jwt}}"
 							}
 						],
 						"body": {
