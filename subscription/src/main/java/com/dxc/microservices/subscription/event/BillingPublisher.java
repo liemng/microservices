@@ -8,6 +8,7 @@ import org.springframework.data.rest.core.annotation.RepositoryEventHandler;
 import org.springframework.integration.support.MessageBuilder;
 import org.springframework.stereotype.Component;
 
+import com.dxc.microservices.common.model.BillingEvent;
 import com.dxc.microservices.subscription.model.Movie;
 import com.dxc.microservices.subscription.model.Subscription;
 

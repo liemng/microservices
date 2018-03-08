@@ -1,5 +1,11 @@
-package com.dxc.microservices.subscription.event;
+package com.dxc.microservices.common.model;
 
+/**
+ * A model class to encapsulate a billing event.  Action can be "BILL" or "CREDIT".
+ * 
+ * @author liemmn
+ *
+ */
 public class BillingEvent {
     private String action;
     private int customerId;

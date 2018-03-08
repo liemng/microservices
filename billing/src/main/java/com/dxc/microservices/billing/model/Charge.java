@@ -1,5 +1,11 @@
 package com.dxc.microservices.billing.model;
 
+/**
+ * A model class to encapsulate a charge (or credit) to a customer's account.
+ * 
+ * @author liemmn
+ *
+ */
 public class Charge {
     private double amount;
     

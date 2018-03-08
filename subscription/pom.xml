@@ -35,6 +35,11 @@
 	</properties>
 
 	<dependencies>
+		<dependency>
+			<groupId>com.dxc.microservices</groupId>
+			<artifactId>common</artifactId>
+			<version>${project.version}</version>
+		</dependency>
 		<!-- API -->
 		<dependency>
 			<groupId>org.springframework.boot</groupId>

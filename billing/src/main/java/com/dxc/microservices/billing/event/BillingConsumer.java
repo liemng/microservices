@@ -9,6 +9,7 @@ import org.springframework.cloud.stream.messaging.Sink;
 
 import com.dxc.microservices.billing.model.Charge;
 import com.dxc.microservices.billing.service.BillingService;
+import com.dxc.microservices.common.model.BillingEvent;
 
 @EnableBinding(Sink.class)  // Binds to default Kafka input channel
 public class BillingConsumer {

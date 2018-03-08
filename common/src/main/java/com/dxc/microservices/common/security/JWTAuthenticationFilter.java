@@ -1,4 +1,4 @@
-package com.dxc.microservices.billing.security;
+package com.dxc.microservices.common.security;
 
 import java.io.IOException;
 import java.io.UnsupportedEncodingException;

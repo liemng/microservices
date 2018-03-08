@@ -7,291 +7,6 @@
 	},
 	"item": [
 		{
-			"name": "Test",
-			"description": "",
-			"item": [
-				{
-					"name": "New subscription",
-					"event": [
-						{
-							"listen": "test",
-							"script": {
-								"id": "22217ea5-8043-433b-9b4c-d0136c50166d",
-								"type": "text/javascript",
-								"exec": [
-									"pm.test(\"Status code is 201\", function () {",
-									"    pm.response.to.have.status(201);",
-									"});"
-								]
-							}
-						}
-					],
-					"request": {
-						"auth": {
-							"type": "noauth"
-						},
-						"method": "POST",
-						"header": [
-							{
-								"key": "Content-Type",
-								"value": "application/json"
-							},
-							{
-								"key": "x-apigw-jwt",
-								"value": "{{jwt}}"
-							}
-						],
-						"body": {
-							"mode": "raw",
-							"raw": "{\n\t\"customerId\": 127\n}"
-						},
-						"url": {
-							"raw": "http://{{subscription}}/subscriptions",
-							"protocol": "http",
-							"host": [
-								"{{subscription}}"
-							],
-							"path": [
-								"subscriptions"
-							]
-						},
-						"description": ""
-					},
-					"response": []
-				},
-				{
-					"name": "List subscriptions",
-					"event": [
-						{
-							"listen": "test",
-							"script": {
-								"id": "c4f91361-0da4-4537-8aca-19cbca0e5192",
-								"type": "text/javascript",
-								"exec": [
-									"pm.test(\"Status code is 200\", function () {",
-									"    pm.response.to.have.status(200);",
-									"});"
-								]
-							}
-						}
-					],
-					"request": {
-						"auth": {
-							"type": "noauth"
-						},
-						"method": "GET",
-						"header": [
-							{
-								"key": "x-apigw-jwt",
-								"value": "{{jwt}}"
-							}
-						],
-						"body": {},
-						"url": {
-							"raw": "http://{{subscription}}/subscriptions",
-							"protocol": "http",
-							"host": [
-								"{{subscription}}"
-							],
-							"path": [
-								"subscriptions"
-							]
-						},
-						"description": ""
-					},
-					"response": []
-				},
-				{
-					"name": "Subscribe movies",
-					"event": [
-						{
-							"listen": "test",
-							"script": {
-								"id": "10226df0-8814-4ec4-bcfc-ddcfc4745265",
-								"type": "text/javascript",
-								"exec": [
-									"pm.test(\"Status code is 204\", function () {",
-									"    pm.response.to.have.status(204);",
-									"});"
-								]
-							}
-						}
-					],
-					"request": {
-						"auth": {
-							"type": "noauth"
-						},
-						"method": "PUT",
-						"header": [
-							{
-								"key": "Content-Type",
-								"value": "text/uri-list"
-							},
-							{
-								"key": "x-apigw-jwt",
-								"value": "{{jwt}}"
-							}
-						],
-						"body": {
-							"mode": "raw",
-							"raw": "http://subscriptionservice:8889/movies/12\nhttp://subscriptionservice:8889/movies/10"
-						},
-						"url": {
-							"raw": "http://{{subscription}}/subscriptions/1/movies",
-							"protocol": "http",
-							"host": [
-								"{{subscription}}"
-							],
-							"path": [
-								"subscriptions",
-								"1",
-								"movies"
-							]
-						},
-						"description": ""
-					},
-					"response": []
-				},
-				{
-					"name": "List subscribed movies",
-					"event": [
-						{
-							"listen": "test",
-							"script": {
-								"id": "11d85247-e54c-4739-939f-47fb92734df7",
-								"type": "text/javascript",
-								"exec": [
-									"pm.test(\"Status code is 200\", function () {",
-									"    pm.response.to.have.status(200);",
-									"});"
-								]
-							}
-						}
-					],
-					"request": {
-						"auth": {
-							"type": "noauth"
-						},
-						"method": "GET",
-						"header": [
-							{
-								"key": "x-apigw-jwt",
-								"value": "{{jwt}}"
-							}
-						],
-						"body": {},
-						"url": {
-							"raw": "http://{{subscription}}/subscriptions/1/movies",
-							"protocol": "http",
-							"host": [
-								"{{subscription}}"
-							],
-							"path": [
-								"subscriptions",
-								"1",
-								"movies"
-							]
-						},
-						"description": ""
-					},
-					"response": []
-				},
-				{
-					"name": "List accounts",
-					"event": [
-						{
-							"listen": "test",
-							"script": {
-								"id": "a58ec230-2c86-40c2-9ab7-c9b7efc437c9",
-								"type": "text/javascript",
-								"exec": [
-									"pm.test(\"Status code is 200\", function () {",
-									"    pm.response.to.have.status(200);",
-									"});"
-								]
-							}
-						}
-					],
-					"request": {
-						"auth": {
-							"type": "noauth"
-						},
-						"method": "GET",
-						"header": [
-							{
-								"key": "x-apigw-jwt",
-								"value": "{{jwt}}"
-							}
-						],
-						"body": {},
-						"url": {
-							"raw": "http://{{billing}}/accounts",
-							"protocol": "http",
-							"host": [
-								"{{billing}}"
-							],
-							"path": [
-								"accounts"
-							]
-						},
-						"description": ""
-					},
-					"response": []
-				},
-				{
-					"name": "Credit account",
-					"event": [
-						{
-							"listen": "test",
-							"script": {
-								"id": "2f75a307-e378-432c-a84c-7ef83c3bbbbd",
-								"type": "text/javascript",
-								"exec": [
-									"pm.test(\"Status code is 200\", function () {",
-									"    pm.response.to.have.status(200);",
-									"});"
-								]
-							}
-						}
-					],
-					"request": {
-						"auth": {
-							"type": "noauth"
-						},
-						"method": "POST",
-						"header": [
-							{
-								"key": "Content-Type",
-								"value": "application/json"
-							},
-							{
-								"key": "x-apigw-jwt",
-								"value": "{{jwt}}"
-							}
-						],
-						"body": {
-							"mode": "raw",
-							"raw": "{\"amount\": 10}"
-						},
-						"url": {
-							"raw": "http://{{billing}}/accounts/127/credit",
-							"protocol": "http",
-							"host": [
-								"{{billing}}"
-							],
-							"path": [
-								"accounts",
-								"127",
-								"credit"
-							]
-						},
-						"description": ""
-					},
-					"response": []
-				}
-			]
-		},
-		{
 			"name": "Create OAuth token",
 			"event": [
 				{
@@ -525,12 +240,12 @@
 				{
 					"listen": "test",
 					"script": {
-						"id": "3f687fbf-0e57-4cd0-8619-8506434a8cc8",
+						"id": "cbf953d5-7389-4ebb-a895-6c67c7d197bf",
 						"type": "text/javascript",
 						"exec": [
 							"pm.test(\"Status code is 200\", function () {",
 							"    pm.response.to.have.status(200);",
-							"     postman.setEnvironmentVariable(\"jwt\", pm.response.text());",
+							"    postman.setEnvironmentVariable(\"jwt\", pm.response.text());",
 							"});"
 						]
 					}
@@ -717,6 +432,50 @@
 			"response": []
 		},
 		{
+			"name": "List accounts before",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"id": "8491f219-ed06-4bb2-943d-3859b9eb4438",
+						"type": "text/javascript",
+						"exec": [
+							"pm.test(\"Status code is 200\", function () {",
+							"    pm.response.to.have.status(200);",
+							"    var jsonData = pm.response.json();",
+							"    postman.setEnvironmentVariable(\"balance\", jsonData._embedded.accounts[0].balance)",
+							"});"
+						]
+					}
+				}
+			],
+			"request": {
+				"auth": {
+					"type": "noauth"
+				},
+				"method": "GET",
+				"header": [
+					{
+						"key": "x-apigw-jwt",
+						"value": "{{jwt}}"
+					}
+				],
+				"body": {},
+				"url": {
+					"raw": "http://{{billing}}/accounts",
+					"protocol": "http",
+					"host": [
+						"{{billing}}"
+					],
+					"path": [
+						"accounts"
+					]
+				},
+				"description": ""
+			},
+			"response": []
+		},
+		{
 			"name": "Subscribe movies",
 			"event": [
 				{
@@ -772,16 +531,60 @@
 			"response": []
 		},
 		{
+			"name": "List accounts after",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"id": "ecfb2916-14fa-4cb1-a36f-e25df6472fbb",
+						"type": "text/javascript",
+						"exec": [
+							"pm.test(\"Your test name\", function () {",
+							"    var jsonData = pm.response.json();",
+							"    pm.expect(jsonData._embedded.accounts[0].balance).to.eql(postman.getEnvironmentVariable(\"balance\") - 19.95);",
+							"});"
+						]
+					}
+				}
+			],
+			"request": {
+				"auth": {
+					"type": "noauth"
+				},
+				"method": "GET",
+				"header": [
+					{
+						"key": "x-apigw-jwt",
+						"value": "{{jwt}}"
+					}
+				],
+				"body": {},
+				"url": {
+					"raw": "http://{{billing}}/accounts",
+					"protocol": "http",
+					"host": [
+						"{{billing}}"
+					],
+					"path": [
+						"accounts"
+					]
+				},
+				"description": ""
+			},
+			"response": []
+		},
+		{
 			"name": "List subscribed movies",
 			"event": [
 				{
 					"listen": "test",
 					"script": {
-						"id": "11d85247-e54c-4739-939f-47fb92734df7",
+						"id": "8a877be5-660c-4297-97c0-19e954eb1b45",
 						"type": "text/javascript",
 						"exec": [
 							"pm.test(\"Status code is 200\", function () {",
 							"    pm.response.to.have.status(200);",
+							"    pm.expect(pm.response.json()._embedded.movies[0].title).to.eql(\"The God Father Part II\")",
 							"});"
 						]
 					}
@@ -812,6 +615,57 @@
 						"subscriptions",
 						"1",
 						"movies"
+					]
+				},
+				"description": ""
+			},
+			"response": []
+		},
+		{
+			"name": "Credit account",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"id": "2f75a307-e378-432c-a84c-7ef83c3bbbbd",
+						"type": "text/javascript",
+						"exec": [
+							"pm.test(\"Status code is 200\", function () {",
+							"    pm.response.to.have.status(200);",
+							"});"
+						]
+					}
+				}
+			],
+			"request": {
+				"auth": {
+					"type": "noauth"
+				},
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json"
+					},
+					{
+						"key": "x-apigw-jwt",
+						"value": "{{jwt}}"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\"amount\": 19.95}"
+				},
+				"url": {
+					"raw": "http://{{billing}}/accounts/127/credit",
+					"protocol": "http",
+					"host": [
+						"{{billing}}"
+					],
+					"path": [
+						"accounts",
+						"127",
+						"credit"
 					]
 				},
 				"description": ""
