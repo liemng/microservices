@@ -1,5 +1,20 @@
 version: '2.1'
 services:
+  database:
+    image: mysql:5.7
+    mem_limit: 512m
+    ports:
+    - 3306:3306
+    volumes:
+    - db-volume:/var/lib/mysql
+    restart: always
+    environment:
+      MYSQL_ROOT_PASSWORD: 7layer
+      MYSQL_DATABASE: microservicedb
+    healthcheck:
+      test: /usr/bin/mysql --user=root --password=7layer --execute "SHOW DATABASES;"
+      interval: 10s
+      timeout: 10s
   oauth2server:
     image: liemmn/dxc-oauth2-server:microservices
     ports:
@@ -11,7 +26,9 @@ services:
     ports:
     - 2181:2181
     - 9092:9092
-# Environment for running microservices on Eclipse 
+# Environment for running microservices on Eclipse
 #    environment:
 #      ADVERTISED_HOST: localhost
 #      ADVERTISED_PORT: 9092
+volumes:
+  db-volume:

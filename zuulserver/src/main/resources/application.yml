@@ -1,0 +1,10 @@
+server:
+  port: 8080
+zuul:
+   routes:
+      subscriptionservice:
+         path: /v1/**
+         url: http://subscriptionservice:8889
+ribbon:
+   eureka:
+      enabled: false

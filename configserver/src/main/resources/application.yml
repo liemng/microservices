@@ -6,4 +6,4 @@ spring:
       server:
         git:
           uri: https://github.com/liemng/microconfig.git
-          searchPaths: subscriptionservice,billingservice
+          searchPaths: subscriptionservice,billingservice,zuulserver

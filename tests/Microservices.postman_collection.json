@@ -1,8 +1,7 @@
 {
 	"info": {
-		"name": "Microservices",
 		"_postman_id": "45dbbd25-af04-64ca-3047-cb30073ebef2",
-		"description": "",
+		"name": "Microservices",
 		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
 	},
 	"item": [
@@ -60,19 +59,16 @@
 						{
 							"key": "grant_type",
 							"value": "password",
-							"description": "",
 							"type": "text"
 						},
 						{
 							"key": "username",
 							"value": "liemmn",
-							"description": "",
 							"type": "text"
 						},
 						{
 							"key": "password",
 							"value": "skyline",
-							"description": "",
 							"type": "text"
 						}
 					]
@@ -87,8 +83,7 @@
 						"oauth",
 						"token"
 					]
-				},
-				"description": ""
+				}
 			},
 			"response": []
 		},
@@ -155,12 +150,10 @@
 					"query": [
 						{
 							"key": "token",
-							"value": "{{oauthtoken}}",
-							"equals": true
+							"value": "{{oauthtoken}}"
 						}
 					]
-				},
-				"description": ""
+				}
 			},
 			"response": []
 		},
@@ -197,25 +190,21 @@
 						{
 							"key": "grant_type",
 							"value": "password",
-							"description": "",
 							"type": "text"
 						},
 						{
 							"key": "scope",
 							"value": "webclient",
-							"description": "",
 							"type": "text"
 						},
 						{
 							"key": "username",
 							"value": "liem.nguyen",
-							"description": "",
 							"type": "text"
 						},
 						{
 							"key": "password",
 							"value": "skyline",
-							"description": "",
 							"type": "text"
 						}
 					]
@@ -229,53 +218,7 @@
 					"path": [
 						"user"
 					]
-				},
-				"description": ""
-			},
-			"response": []
-		},
-		{
-			"name": "JWT Test",
-			"event": [
-				{
-					"listen": "test",
-					"script": {
-						"id": "cbf953d5-7389-4ebb-a895-6c67c7d197bf",
-						"type": "text/javascript",
-						"exec": [
-							"pm.test(\"Status code is 200\", function () {",
-							"    pm.response.to.have.status(200);",
-							"    postman.setEnvironmentVariable(\"jwt\", pm.response.text());",
-							"});"
-						]
-					}
 				}
-			],
-			"request": {
-				"auth": {
-					"type": "bearer",
-					"bearer": [
-						{
-							"key": "token",
-							"value": "{{oauthtoken}}",
-							"type": "string"
-						}
-					]
-				},
-				"method": "GET",
-				"header": [],
-				"body": {},
-				"url": {
-					"raw": "https://{{apigw}}/jwttest",
-					"protocol": "https",
-					"host": [
-						"{{apigw}}"
-					],
-					"path": [
-						"jwttest"
-					]
-				},
-				"description": ""
 			},
 			"response": []
 		},
@@ -286,13 +229,13 @@
 					"listen": "test",
 					"script": {
 						"id": "8dcecbf2-d0e6-4faa-a7a7-823839be6607",
-						"type": "text/javascript",
 						"exec": [
 							"pm.test(\"Check for movies\", function () {",
 							"    var jsonData = pm.response.json();",
 							"    pm.expect(jsonData._embedded.movies.length).to.eql(20);",
 							"});"
-						]
+						],
+						"type": "text/javascript"
 					}
 				}
 			],
@@ -319,8 +262,8 @@
 					"raw": "{\n\t\"title\": \"Terminator 2\",\n\t\"genre\": \"action\",\n\t\"price\": 19.95\n}"
 				},
 				"url": {
-					"raw": "https://{{apigw}}/v1/movies",
-					"protocol": "https",
+					"raw": "http://{{apigw}}/v1/movies",
+					"protocol": "http",
 					"host": [
 						"{{apigw}}"
 					],
@@ -328,8 +271,7 @@
 						"v1",
 						"movies"
 					]
-				},
-				"description": ""
+				}
 			},
 			"response": []
 		},
@@ -340,12 +282,12 @@
 					"listen": "test",
 					"script": {
 						"id": "22217ea5-8043-433b-9b4c-d0136c50166d",
-						"type": "text/javascript",
 						"exec": [
 							"pm.test(\"Status code is 201\", function () {",
 							"    pm.response.to.have.status(201);",
 							"});"
-						]
+						],
+						"type": "text/javascript"
 					}
 				}
 			],
@@ -372,8 +314,8 @@
 					"raw": "{\n\t\"customerId\": 127\n}"
 				},
 				"url": {
-					"raw": "https://{{apigw}}/v1/subscriptions",
-					"protocol": "https",
+					"raw": "http://{{apigw}}/v1/subscriptions",
+					"protocol": "http",
 					"host": [
 						"{{apigw}}"
 					],
@@ -381,8 +323,7 @@
 						"v1",
 						"subscriptions"
 					]
-				},
-				"description": ""
+				}
 			},
 			"response": []
 		},
@@ -393,12 +334,12 @@
 					"listen": "test",
 					"script": {
 						"id": "c4f91361-0da4-4537-8aca-19cbca0e5192",
-						"type": "text/javascript",
 						"exec": [
 							"pm.test(\"Status code is 200\", function () {",
 							"    pm.response.to.have.status(200);",
 							"});"
-						]
+						],
+						"type": "text/javascript"
 					}
 				}
 			],
@@ -417,8 +358,8 @@
 				"header": [],
 				"body": {},
 				"url": {
-					"raw": "https://{{apigw}}/v1/subscriptions",
-					"protocol": "https",
+					"raw": "http://{{apigw}}/v1/subscriptions",
+					"protocol": "http",
 					"host": [
 						"{{apigw}}"
 					],
@@ -426,52 +367,7 @@
 						"v1",
 						"subscriptions"
 					]
-				},
-				"description": ""
-			},
-			"response": []
-		},
-		{
-			"name": "List accounts before",
-			"event": [
-				{
-					"listen": "test",
-					"script": {
-						"id": "8491f219-ed06-4bb2-943d-3859b9eb4438",
-						"type": "text/javascript",
-						"exec": [
-							"pm.test(\"Status code is 200\", function () {",
-							"    pm.response.to.have.status(200);",
-							"    var jsonData = pm.response.json();",
-							"    postman.setEnvironmentVariable(\"balance\", jsonData._embedded.accounts[0].balance)",
-							"});"
-						]
-					}
 				}
-			],
-			"request": {
-				"auth": {
-					"type": "noauth"
-				},
-				"method": "GET",
-				"header": [
-					{
-						"key": "x-apigw-jwt",
-						"value": "{{jwt}}"
-					}
-				],
-				"body": {},
-				"url": {
-					"raw": "http://{{billing}}/accounts",
-					"protocol": "http",
-					"host": [
-						"{{billing}}"
-					],
-					"path": [
-						"accounts"
-					]
-				},
-				"description": ""
 			},
 			"response": []
 		},
@@ -482,12 +378,12 @@
 					"listen": "test",
 					"script": {
 						"id": "10226df0-8814-4ec4-bcfc-ddcfc4745265",
-						"type": "text/javascript",
 						"exec": [
 							"pm.test(\"Status code is 204\", function () {",
 							"    pm.response.to.have.status(204);",
 							"});"
-						]
+						],
+						"type": "text/javascript"
 					}
 				}
 			],
@@ -514,8 +410,8 @@
 					"raw": "http://subscriptionservice:8889/movies/12"
 				},
 				"url": {
-					"raw": "https://{{apigw}}/v1/subscriptions/1/movies",
-					"protocol": "https",
+					"raw": "http://{{apigw}}/v1/subscriptions/1/movies",
+					"protocol": "http",
 					"host": [
 						"{{apigw}}"
 					],
@@ -525,51 +421,7 @@
 						"1",
 						"movies"
 					]
-				},
-				"description": ""
-			},
-			"response": []
-		},
-		{
-			"name": "List accounts after",
-			"event": [
-				{
-					"listen": "test",
-					"script": {
-						"id": "ecfb2916-14fa-4cb1-a36f-e25df6472fbb",
-						"type": "text/javascript",
-						"exec": [
-							"pm.test(\"Your test name\", function () {",
-							"    var jsonData = pm.response.json();",
-							"    pm.expect(jsonData._embedded.accounts[0].balance).to.eql(postman.getEnvironmentVariable(\"balance\") - 19.95);",
-							"});"
-						]
-					}
 				}
-			],
-			"request": {
-				"auth": {
-					"type": "noauth"
-				},
-				"method": "GET",
-				"header": [
-					{
-						"key": "x-apigw-jwt",
-						"value": "{{jwt}}"
-					}
-				],
-				"body": {},
-				"url": {
-					"raw": "http://{{billing}}/accounts",
-					"protocol": "http",
-					"host": [
-						"{{billing}}"
-					],
-					"path": [
-						"accounts"
-					]
-				},
-				"description": ""
 			},
 			"response": []
 		},
@@ -580,13 +432,13 @@
 					"listen": "test",
 					"script": {
 						"id": "8a877be5-660c-4297-97c0-19e954eb1b45",
-						"type": "text/javascript",
 						"exec": [
 							"pm.test(\"Status code is 200\", function () {",
 							"    pm.response.to.have.status(200);",
 							"    pm.expect(pm.response.json()._embedded.movies[0].title).to.eql(\"The God Father Part II\")",
 							"});"
-						]
+						],
+						"type": "text/javascript"
 					}
 				}
 			],
@@ -605,8 +457,8 @@
 				"header": [],
 				"body": {},
 				"url": {
-					"raw": "https://{{apigw}}/v1/subscriptions/1/movies",
-					"protocol": "https",
+					"raw": "http://{{apigw}}/v1/subscriptions/1/movies",
+					"protocol": "http",
 					"host": [
 						"{{apigw}}"
 					],
@@ -616,59 +468,7 @@
 						"1",
 						"movies"
 					]
-				},
-				"description": ""
-			},
-			"response": []
-		},
-		{
-			"name": "Credit account",
-			"event": [
-				{
-					"listen": "test",
-					"script": {
-						"id": "2f75a307-e378-432c-a84c-7ef83c3bbbbd",
-						"type": "text/javascript",
-						"exec": [
-							"pm.test(\"Status code is 200\", function () {",
-							"    pm.response.to.have.status(200);",
-							"});"
-						]
-					}
 				}
-			],
-			"request": {
-				"auth": {
-					"type": "noauth"
-				},
-				"method": "POST",
-				"header": [
-					{
-						"key": "Content-Type",
-						"value": "application/json"
-					},
-					{
-						"key": "x-apigw-jwt",
-						"value": "{{jwt}}"
-					}
-				],
-				"body": {
-					"mode": "raw",
-					"raw": "{\"amount\": 19.95}"
-				},
-				"url": {
-					"raw": "http://{{billing}}/accounts/127/credit",
-					"protocol": "http",
-					"host": [
-						"{{billing}}"
-					],
-					"path": [
-						"accounts",
-						"127",
-						"credit"
-					]
-				},
-				"description": ""
 			},
 			"response": []
 		}

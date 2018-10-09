@@ -12,6 +12,7 @@
 
   <modules>
     <module>common</module>
+    <module>zuulserver</module>
     <module>configserver</module>
     <module>oauth2server</module>
     <module>subscription</module>

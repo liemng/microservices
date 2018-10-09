@@ -38,3 +38,16 @@ services:
     depends_on:
       configserver:
         condition: service_healthy
+  zuulserver:
+    image: liemmn/dxc-zuul-server:microservices
+    ports:
+    - 8080:8080
+    environment:
+      PROFILE: docker
+      CONFIGSERVER_URI: http://configserver:8888
+      ENCRYPT_KEY: IMSYMMETRIC
+    healthcheck:
+      test: ["CMD", "curl", "-f", "http://localhost:8080/health"]
+    depends_on:
+      configserver:
+        condition: service_healthy
