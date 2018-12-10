@@ -1,4 +1,10 @@
 # microservices
+
+## Overview
+A simple microservice-based exercise using SpringBoot:
+
+![Class diagram](docs/overview.png)
+
 ## Requirements
 * Requires Docker, Java 8, and Maven
 * At run-time, fetches configurations from [Configuration Github](https://github.com/liemng/microconfig)
@@ -7,9 +13,9 @@
 `mvn clean package docker:build`
 
 ## Deploy it!
-`docker-compose -f docker-gw.yml -f docker-infra.yml -f docker-app.yml up`
+`docker-compose -f docker-infra.yml -f docker-app.yml up`
 
-_Note_: 
+_Note_:
 * This branch (zuul) uses the Netflix Zuul server for the API Gateway.  For the CA Layer7 API Gateway, use the main branch.
 * Docker engine needs to have at least 4GB RAM reserved (more if you are running other stuff besides this).
 

@@ -5,6 +5,9 @@ zuul:
       subscriptionservice:
          path: /v1/**
          url: http://subscriptionservice:8889
+      billingservice:
+         path: /billing/**
+         url: http://billingservice:8890    
 ribbon:
    eureka:
       enabled: false

@@ -1,12 +1,12 @@
 {
 	"info": {
-		"_postman_id": "45dbbd25-af04-64ca-3047-cb30073ebef2",
+		"_postman_id": "c489a93f-e0a2-4d38-95a5-5ea6945cbef4",
 		"name": "Microservices",
 		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
 	},
 	"item": [
 		{
-			"name": "Create OAuth token",
+			"name": "Create OAuth token (subscriber)",
 			"event": [
 				{
 					"listen": "test",
@@ -136,7 +136,10 @@
 						"value": "application/x-www-form-urlencoded"
 					}
 				],
-				"body": {},
+				"body": {
+					"mode": "raw",
+					"raw": ""
+				},
 				"url": {
 					"raw": "http://{{oauth2server}}/oauth/check_token?token={{oauthtoken}}",
 					"protocol": "http",
@@ -185,29 +188,8 @@
 					}
 				],
 				"body": {
-					"mode": "formdata",
-					"formdata": [
-						{
-							"key": "grant_type",
-							"value": "password",
-							"type": "text"
-						},
-						{
-							"key": "scope",
-							"value": "webclient",
-							"type": "text"
-						},
-						{
-							"key": "username",
-							"value": "liem.nguyen",
-							"type": "text"
-						},
-						{
-							"key": "password",
-							"value": "skyline",
-							"type": "text"
-						}
-					]
+					"mode": "raw",
+					"raw": ""
 				},
 				"url": {
 					"raw": "http://{{oauth2server}}/user",
@@ -259,7 +241,7 @@
 				"header": [],
 				"body": {
 					"mode": "raw",
-					"raw": "{\n\t\"title\": \"Terminator 2\",\n\t\"genre\": \"action\",\n\t\"price\": 19.95\n}"
+					"raw": ""
 				},
 				"url": {
 					"raw": "http://{{apigw}}/v1/movies",
@@ -356,7 +338,10 @@
 				},
 				"method": "GET",
 				"header": [],
-				"body": {},
+				"body": {
+					"mode": "raw",
+					"raw": ""
+				},
 				"url": {
 					"raw": "http://{{apigw}}/v1/subscriptions",
 					"protocol": "http",
@@ -455,7 +440,10 @@
 				},
 				"method": "GET",
 				"header": [],
-				"body": {},
+				"body": {
+					"mode": "raw",
+					"raw": ""
+				},
 				"url": {
 					"raw": "http://{{apigw}}/v1/subscriptions/1/movies",
 					"protocol": "http",
@@ -467,6 +455,265 @@
 						"subscriptions",
 						"1",
 						"movies"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Credit $19.95 to account",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"id": "8dcecbf2-d0e6-4faa-a7a7-823839be6607",
+						"exec": [
+							"pm.test(\"Check for movies\", function () {",
+							"    var jsonData = pm.response.json();",
+							"    pm.expect(jsonData.balance).to.eql(100);",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"auth": {
+					"type": "oauth2",
+					"oauth2": [
+						{
+							"key": "accessToken",
+							"value": "{{oauthtoken}}",
+							"type": "string"
+						},
+						{
+							"key": "addTokenTo",
+							"value": "header",
+							"type": "string"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"name": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\"amount\": 19.95}"
+				},
+				"url": {
+					"raw": "http://{{apigw}}/billing/accounts/127/credit",
+					"protocol": "http",
+					"host": [
+						"{{apigw}}"
+					],
+					"path": [
+						"billing",
+						"accounts",
+						"127",
+						"credit"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Get user account",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"id": "8dcecbf2-d0e6-4faa-a7a7-823839be6607",
+						"exec": [
+							"pm.test(\"Check for movies\", function () {",
+							"    var jsonData = pm.response.json();",
+							"    pm.expect(jsonData.balance).to.eql(100);",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"auth": {
+					"type": "oauth2",
+					"oauth2": [
+						{
+							"key": "accessToken",
+							"value": "{{oauthtoken}}",
+							"type": "string"
+						},
+						{
+							"key": "addTokenTo",
+							"value": "header",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": ""
+				},
+				"url": {
+					"raw": "http://{{apigw}}/billing/accounts/127",
+					"protocol": "http",
+					"host": [
+						"{{apigw}}"
+					],
+					"path": [
+						"billing",
+						"accounts",
+						"127"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Create OAuth token (user)",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"id": "46e52f21-1b24-4398-9ac3-ddde6770fb96",
+						"exec": [
+							"pm.test(\"Your test name\", function () {",
+							"    pm.response.to.have.status(200);",
+							"    var token = pm.response.json().access_token;",
+							"    postman.setEnvironmentVariable(\"oauthtoken\", token);",
+							"});",
+							"",
+							""
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"auth": {
+					"type": "basic",
+					"basic": [
+						{
+							"key": "password",
+							"value": "secret",
+							"type": "string"
+						},
+						{
+							"key": "username",
+							"value": "apps",
+							"type": "string"
+						},
+						{
+							"key": "saveHelperData",
+							"value": true,
+							"type": "boolean"
+						},
+						{
+							"key": "showPassword",
+							"value": false,
+							"type": "boolean"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "formdata",
+					"formdata": [
+						{
+							"key": "grant_type",
+							"value": "password",
+							"type": "text"
+						},
+						{
+							"key": "username",
+							"value": "justin",
+							"type": "text"
+						},
+						{
+							"key": "password",
+							"value": "skyline",
+							"type": "text"
+						}
+					]
+				},
+				"url": {
+					"raw": "http://{{oauth2server}}/oauth/token",
+					"protocol": "http",
+					"host": [
+						"{{oauth2server}}"
+					],
+					"path": [
+						"oauth",
+						"token"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Credit $19.95 to account (fail)",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"id": "8dcecbf2-d0e6-4faa-a7a7-823839be6607",
+						"exec": [
+							"pm.test(\"Unauthorized user\", function () {",
+							"    pm.response.to.have.status(403);",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"auth": {
+					"type": "oauth2",
+					"oauth2": [
+						{
+							"key": "accessToken",
+							"value": "{{oauthtoken}}",
+							"type": "string"
+						},
+						{
+							"key": "addTokenTo",
+							"value": "header",
+							"type": "string"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"name": "Content-Type",
+						"type": "text",
+						"value": "application/json"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\"amount\": 19.95}"
+				},
+				"url": {
+					"raw": "http://{{apigw}}/billing/accounts/127/credit",
+					"protocol": "http",
+					"host": [
+						"{{apigw}}"
+					],
+					"path": [
+						"billing",
+						"accounts",
+						"127",
+						"credit"
 					]
 				}
 			},
