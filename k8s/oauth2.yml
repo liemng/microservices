@@ -1,0 +1,51 @@
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: oauth2-service
+  annotations:
+    description: OAuth2 service.
+spec:
+  selector:
+    tier: aggregation
+    app: oauth2
+  type: ClusterIP
+  ports:
+    - protocol: TCP
+      port: 9999
+      targetPort: 9999
+      name: oauth2-port
+---
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: oauth2-deployment
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      tier: aggregation
+      app: oauth2
+  template:
+    metadata:
+      labels:
+        tier: aggregation
+        app: oauth2
+    spec:
+      containers:
+      - name: oauth2
+        image: liemmn/dxc-oauth2-server:microservices
+        ports:
+          - containerPort: 9999
+        readinessProbe:
+          httpGet:
+            path: /health
+            port: 9999
+          initialDelaySeconds: 10
+          periodSeconds: 10
+        livenessProbe:
+          httpGet:
+            path: /health
+            port: 9999
+          initialDelaySeconds: 30
+          periodSeconds: 5

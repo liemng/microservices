@@ -2,12 +2,12 @@ server:
   port: 8080
 zuul:
    routes:
-      subscriptionservice:
+      subscription-service:
          path: /v1/**
-         url: http://subscriptionservice:8889
-      billingservice:
+         url: http://subscription-service:8889
+      billing-service:
          path: /billing/**
-         url: http://billingservice:8890    
+         url: http://billing-service:8890
 ribbon:
    eureka:
       enabled: false
