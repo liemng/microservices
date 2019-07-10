@@ -24,12 +24,12 @@ spec:
   replicas: 1
   selector:
     matchLabels:
-      tier: aggregation
+      tier: service
       app: subscription
   template:
     metadata:
       labels:
-        tier: aggregation
+        tier: service
         app: subscription
     spec:
       containers:

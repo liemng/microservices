@@ -5,16 +5,16 @@ metadata:
   annotations:
     kubernetes.io/ingress.class: nginx
     nginx.ingress.kubernetes.io/ssl-redirect: "false"
-    nginx.ingress.kubernetes.io/rewrite-target: /
+    nginx.ingress.kubernetes.io/rewrite-target: /$2
 spec:
   rules:
     - http:
         paths:
-          - path: /
+          - path: /auth(/|$)(.*)
             backend:
               serviceName: oauth2-service
               servicePort: 9999
-          - path: /api
+          - path: /api(/|$)(.*)
             backend:
               serviceName: apigw-service
               servicePort: 8080

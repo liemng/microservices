@@ -1,6 +1,6 @@
 {
 	"info": {
-		"_postman_id": "c489a93f-e0a2-4d38-95a5-5ea6945cbef4",
+		"_postman_id": "0dadcc37-61d7-4dcb-84a6-e9251e1e7bef",
 		"name": "Microservices",
 		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
 	},
@@ -12,7 +12,6 @@
 					"listen": "test",
 					"script": {
 						"id": "46e52f21-1b24-4398-9ac3-ddde6770fb96",
-						"type": "text/javascript",
 						"exec": [
 							"pm.test(\"Your test name\", function () {",
 							"    pm.response.to.have.status(200);",
@@ -21,7 +20,8 @@
 							"});",
 							"",
 							""
-						]
+						],
+						"type": "text/javascript"
 					}
 				}
 			],
@@ -74,12 +74,13 @@
 					]
 				},
 				"url": {
-					"raw": "http://{{oauth2server}}/oauth/token",
+					"raw": "http://{{apigw}}/auth/oauth/token",
 					"protocol": "http",
 					"host": [
-						"{{oauth2server}}"
+						"{{apigw}}"
 					],
 					"path": [
+						"auth",
 						"oauth",
 						"token"
 					]
@@ -94,12 +95,12 @@
 					"listen": "test",
 					"script": {
 						"id": "72a97f48-3fc3-4c2f-a1c8-d7e97755b47c",
-						"type": "text/javascript",
 						"exec": [
 							"pm.test(\"Status code is 200\", function () {",
 							"    pm.response.to.have.status(200);",
 							"});"
-						]
+						],
+						"type": "text/javascript"
 					}
 				}
 			],
@@ -141,12 +142,13 @@
 					"raw": ""
 				},
 				"url": {
-					"raw": "http://{{oauth2server}}/oauth/check_token?token={{oauthtoken}}",
+					"raw": "http://{{apigw}}/auth/oauth/check_token?token={{oauthtoken}}",
 					"protocol": "http",
 					"host": [
-						"{{oauth2server}}"
+						"{{apigw}}"
 					],
 					"path": [
+						"auth",
 						"oauth",
 						"check_token"
 					],
@@ -167,12 +169,12 @@
 					"listen": "test",
 					"script": {
 						"id": "c83f86ec-c8da-4e58-8d2e-a6c6b3dd30c0",
-						"type": "text/javascript",
 						"exec": [
 							"pm.test(\"Status code is 200\", function () {",
 							"    pm.response.to.have.status(200);",
 							"});"
-						]
+						],
+						"type": "text/javascript"
 					}
 				}
 			],
@@ -187,17 +189,14 @@
 						"value": "Bearer {{oauthtoken}}"
 					}
 				],
-				"body": {
-					"mode": "raw",
-					"raw": ""
-				},
 				"url": {
-					"raw": "http://{{oauth2server}}/user",
+					"raw": "http://{{apigw}}/auth/user",
 					"protocol": "http",
 					"host": [
-						"{{oauth2server}}"
+						"{{apigw}}"
 					],
 					"path": [
+						"auth",
 						"user"
 					]
 				}
@@ -239,17 +238,14 @@
 				},
 				"method": "GET",
 				"header": [],
-				"body": {
-					"mode": "raw",
-					"raw": ""
-				},
 				"url": {
-					"raw": "http://{{apigw}}/v1/movies",
+					"raw": "http://{{apigw}}/api/v1/movies",
 					"protocol": "http",
 					"host": [
 						"{{apigw}}"
 					],
 					"path": [
+						"api",
 						"v1",
 						"movies"
 					]
@@ -296,12 +292,13 @@
 					"raw": "{\n\t\"customerId\": 127\n}"
 				},
 				"url": {
-					"raw": "http://{{apigw}}/v1/subscriptions",
+					"raw": "http://{{apigw}}/api/v1/subscriptions",
 					"protocol": "http",
 					"host": [
 						"{{apigw}}"
 					],
 					"path": [
+						"api",
 						"v1",
 						"subscriptions"
 					]
@@ -338,17 +335,14 @@
 				},
 				"method": "GET",
 				"header": [],
-				"body": {
-					"mode": "raw",
-					"raw": ""
-				},
 				"url": {
-					"raw": "http://{{apigw}}/v1/subscriptions",
+					"raw": "http://{{apigw}}/api/v1/subscriptions",
 					"protocol": "http",
 					"host": [
 						"{{apigw}}"
 					],
 					"path": [
+						"api",
 						"v1",
 						"subscriptions"
 					]
@@ -395,12 +389,13 @@
 					"raw": "http://subscriptionservice:8889/movies/12"
 				},
 				"url": {
-					"raw": "http://{{apigw}}/v1/subscriptions/1/movies",
+					"raw": "http://{{apigw}}/api/v1/subscriptions/1/movies",
 					"protocol": "http",
 					"host": [
 						"{{apigw}}"
 					],
 					"path": [
+						"api",
 						"v1",
 						"subscriptions",
 						"1",
@@ -440,17 +435,14 @@
 				},
 				"method": "GET",
 				"header": [],
-				"body": {
-					"mode": "raw",
-					"raw": ""
-				},
 				"url": {
-					"raw": "http://{{apigw}}/v1/subscriptions/1/movies",
+					"raw": "http://{{apigw}}/api/v1/subscriptions/1/movies",
 					"protocol": "http",
 					"host": [
 						"{{apigw}}"
 					],
 					"path": [
+						"api",
 						"v1",
 						"subscriptions",
 						"1",
@@ -507,12 +499,13 @@
 					"raw": "{\"amount\": 19.95}"
 				},
 				"url": {
-					"raw": "http://{{apigw}}/billing/accounts/127/credit",
+					"raw": "http://{{apigw}}/api/billing/accounts/127/credit",
 					"protocol": "http",
 					"host": [
 						"{{apigw}}"
 					],
 					"path": [
+						"api",
 						"billing",
 						"accounts",
 						"127",
@@ -557,17 +550,14 @@
 				},
 				"method": "GET",
 				"header": [],
-				"body": {
-					"mode": "raw",
-					"raw": ""
-				},
 				"url": {
-					"raw": "http://{{apigw}}/billing/accounts/127",
+					"raw": "http://{{apigw}}/api/billing/accounts/127",
 					"protocol": "http",
 					"host": [
 						"{{apigw}}"
 					],
 					"path": [
+						"api",
 						"billing",
 						"accounts",
 						"127"
@@ -645,12 +635,13 @@
 					]
 				},
 				"url": {
-					"raw": "http://{{oauth2server}}/oauth/token",
+					"raw": "http://{{apigw}}/auth/oauth/token",
 					"protocol": "http",
 					"host": [
-						"{{oauth2server}}"
+						"{{apigw}}"
 					],
 					"path": [
+						"auth",
 						"oauth",
 						"token"
 					]
@@ -704,12 +695,13 @@
 					"raw": "{\"amount\": 19.95}"
 				},
 				"url": {
-					"raw": "http://{{apigw}}/billing/accounts/127/credit",
+					"raw": "http://{{apigw}}/api/billing/accounts/127/credit",
 					"protocol": "http",
 					"host": [
 						"{{apigw}}"
 					],
 					"path": [
+						"api",
 						"billing",
 						"accounts",
 						"127",
