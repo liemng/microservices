@@ -1,0 +1,703 @@
+{
+	"info": {
+		"_postman_id": "a8d2ad42-8109-4f0f-9362-1053f2a02392",
+		"name": "Microservices",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "Create OAuth token (subscriber)",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"id": "46e52f21-1b24-4398-9ac3-ddde6770fb96",
+						"exec": [
+							"pm.test(\"Your test name\", function () {",
+							"    pm.response.to.have.status(200);",
+							"    var token = pm.response.json().access_token;",
+							"    postman.setEnvironmentVariable(\"oauthtoken\", token);",
+							"});",
+							"",
+							""
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"auth": {
+					"type": "basic",
+					"basic": [
+						{
+							"key": "password",
+							"value": "secret",
+							"type": "string"
+						},
+						{
+							"key": "username",
+							"value": "apps",
+							"type": "string"
+						},
+						{
+							"key": "saveHelperData",
+							"value": true,
+							"type": "boolean"
+						},
+						{
+							"key": "showPassword",
+							"value": false,
+							"type": "boolean"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "formdata",
+					"formdata": [
+						{
+							"key": "grant_type",
+							"value": "password",
+							"type": "text"
+						},
+						{
+							"key": "username",
+							"value": "liemmn",
+							"type": "text"
+						},
+						{
+							"key": "password",
+							"value": "skyline",
+							"type": "text"
+						}
+					]
+				},
+				"url": {
+					"raw": "http://{{oauth}}/oauth/token",
+					"protocol": "http",
+					"host": [
+						"{{oauth}}"
+					],
+					"path": [
+						"oauth",
+						"token"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Validate OAuth token",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"id": "72a97f48-3fc3-4c2f-a1c8-d7e97755b47c",
+						"exec": [
+							"pm.test(\"Status code is 200\", function () {",
+							"    pm.response.to.have.status(200);",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"auth": {
+					"type": "basic",
+					"basic": [
+						{
+							"key": "password",
+							"value": "",
+							"type": "string"
+						},
+						{
+							"key": "username",
+							"value": "apigw",
+							"type": "string"
+						},
+						{
+							"key": "saveHelperData",
+							"value": true,
+							"type": "boolean"
+						},
+						{
+							"key": "showPassword",
+							"value": false,
+							"type": "boolean"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/x-www-form-urlencoded"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": ""
+				},
+				"url": {
+					"raw": "http://{{oauth}}/oauth/check_token?token={{oauthtoken}}",
+					"protocol": "http",
+					"host": [
+						"{{oauth}}"
+					],
+					"path": [
+						"oauth",
+						"check_token"
+					],
+					"query": [
+						{
+							"key": "token",
+							"value": "{{oauthtoken}}"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Get OAuth user",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"id": "c83f86ec-c8da-4e58-8d2e-a6c6b3dd30c0",
+						"exec": [
+							"pm.test(\"Status code is 200\", function () {",
+							"    pm.response.to.have.status(200);",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"auth": {
+					"type": "noauth"
+				},
+				"method": "GET",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Bearer {{oauthtoken}}"
+					}
+				],
+				"url": {
+					"raw": "http://{{oauth}}/user",
+					"protocol": "http",
+					"host": [
+						"{{oauth}}"
+					],
+					"path": [
+						"user"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "List movies",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"id": "8dcecbf2-d0e6-4faa-a7a7-823839be6607",
+						"exec": [
+							"pm.test(\"Check for movies\", function () {",
+							"    var jsonData = pm.response.json();",
+							"    pm.expect(jsonData._embedded.movies.length).to.eql(20);",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"auth": {
+					"type": "oauth2",
+					"oauth2": [
+						{
+							"key": "accessToken",
+							"value": "{{oauthtoken}}",
+							"type": "string"
+						},
+						{
+							"key": "addTokenTo",
+							"value": "header",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://{{apigw}}/v1/movies",
+					"protocol": "http",
+					"host": [
+						"{{apigw}}"
+					],
+					"path": [
+						"v1",
+						"movies"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "New subscription",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"id": "22217ea5-8043-433b-9b4c-d0136c50166d",
+						"exec": [
+							"pm.test(\"Status code is 201\", function () {",
+							"    pm.response.to.have.status(201);",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "{{oauthtoken}}",
+							"type": "string"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n\t\"customerId\": 127\n}"
+				},
+				"url": {
+					"raw": "http://{{apigw}}/v1/subscriptions",
+					"protocol": "http",
+					"host": [
+						"{{apigw}}"
+					],
+					"path": [
+						"v1",
+						"subscriptions"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "List subscriptions",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"id": "c4f91361-0da4-4537-8aca-19cbca0e5192",
+						"exec": [
+							"pm.test(\"Status code is 200\", function () {",
+							"    pm.response.to.have.status(200);",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "{{oauthtoken}}",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://{{apigw}}/v1/subscriptions",
+					"protocol": "http",
+					"host": [
+						"{{apigw}}"
+					],
+					"path": [
+						"v1",
+						"subscriptions"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Subscribe movies",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"id": "10226df0-8814-4ec4-bcfc-ddcfc4745265",
+						"exec": [
+							"pm.test(\"Status code is 204\", function () {",
+							"    pm.response.to.have.status(204);",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "{{oauthtoken}}",
+							"type": "string"
+						}
+					]
+				},
+				"method": "PUT",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "text/uri-list"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "http://subscriptionservice:8889/movies/12"
+				},
+				"url": {
+					"raw": "http://{{apigw}}/v1/subscriptions/1/movies",
+					"protocol": "http",
+					"host": [
+						"{{apigw}}"
+					],
+					"path": [
+						"v1",
+						"subscriptions",
+						"1",
+						"movies"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "List subscribed movies",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"id": "8a877be5-660c-4297-97c0-19e954eb1b45",
+						"exec": [
+							"pm.test(\"Status code is 200\", function () {",
+							"    pm.response.to.have.status(200);",
+							"    pm.expect(pm.response.json()._embedded.movies[0].title).to.eql(\"The God Father Part II\")",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "{{oauthtoken}}",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://{{apigw}}/v1/subscriptions/1/movies",
+					"protocol": "http",
+					"host": [
+						"{{apigw}}"
+					],
+					"path": [
+						"v1",
+						"subscriptions",
+						"1",
+						"movies"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Credit $19.95 to account",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"id": "8dcecbf2-d0e6-4faa-a7a7-823839be6607",
+						"exec": [
+							"pm.test(\"Check for movies\", function () {",
+							"    var jsonData = pm.response.json();",
+							"    pm.expect(jsonData.balance).to.eql(100);",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"auth": {
+					"type": "oauth2",
+					"oauth2": [
+						{
+							"key": "accessToken",
+							"value": "{{oauthtoken}}",
+							"type": "string"
+						},
+						{
+							"key": "addTokenTo",
+							"value": "header",
+							"type": "string"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"name": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\"amount\": 19.95}"
+				},
+				"url": {
+					"raw": "http://{{apigw}}/billing/accounts/127/credit",
+					"protocol": "http",
+					"host": [
+						"{{apigw}}"
+					],
+					"path": [
+						"billing",
+						"accounts",
+						"127",
+						"credit"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Get user account",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"id": "8dcecbf2-d0e6-4faa-a7a7-823839be6607",
+						"exec": [
+							"pm.test(\"Check for movies\", function () {",
+							"    var jsonData = pm.response.json();",
+							"    pm.expect(jsonData.balance).to.eql(100);",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"auth": {
+					"type": "oauth2",
+					"oauth2": [
+						{
+							"key": "accessToken",
+							"value": "{{oauthtoken}}",
+							"type": "string"
+						},
+						{
+							"key": "addTokenTo",
+							"value": "header",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://{{apigw}}/billing/accounts/127",
+					"protocol": "http",
+					"host": [
+						"{{apigw}}"
+					],
+					"path": [
+						"billing",
+						"accounts",
+						"127"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Create OAuth token (user)",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"id": "46e52f21-1b24-4398-9ac3-ddde6770fb96",
+						"exec": [
+							"pm.test(\"Your test name\", function () {",
+							"    pm.response.to.have.status(200);",
+							"    var token = pm.response.json().access_token;",
+							"    postman.setEnvironmentVariable(\"oauthtoken\", token);",
+							"});",
+							"",
+							""
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"auth": {
+					"type": "basic",
+					"basic": [
+						{
+							"key": "password",
+							"value": "secret",
+							"type": "string"
+						},
+						{
+							"key": "username",
+							"value": "apps",
+							"type": "string"
+						},
+						{
+							"key": "saveHelperData",
+							"value": true,
+							"type": "boolean"
+						},
+						{
+							"key": "showPassword",
+							"value": false,
+							"type": "boolean"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "formdata",
+					"formdata": [
+						{
+							"key": "grant_type",
+							"value": "password",
+							"type": "text"
+						},
+						{
+							"key": "username",
+							"value": "justin",
+							"type": "text"
+						},
+						{
+							"key": "password",
+							"value": "skyline",
+							"type": "text"
+						}
+					]
+				},
+				"url": {
+					"raw": "http://{{oauth}}/oauth/token",
+					"protocol": "http",
+					"host": [
+						"{{oauth}}"
+					],
+					"path": [
+						"oauth",
+						"token"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Credit $19.95 to account (fail)",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"id": "8dcecbf2-d0e6-4faa-a7a7-823839be6607",
+						"exec": [
+							"pm.test(\"Unauthorized user\", function () {",
+							"    pm.response.to.have.status(403);",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"auth": {
+					"type": "oauth2",
+					"oauth2": [
+						{
+							"key": "accessToken",
+							"value": "{{oauthtoken}}",
+							"type": "string"
+						},
+						{
+							"key": "addTokenTo",
+							"value": "header",
+							"type": "string"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"name": "Content-Type",
+						"type": "text",
+						"value": "application/json"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\"amount\": 19.95}"
+				},
+				"url": {
+					"raw": "http://{{apigw}}/billing/accounts/127/credit",
+					"protocol": "http",
+					"host": [
+						"{{apigw}}"
+					],
+					"path": [
+						"billing",
+						"accounts",
+						"127",
+						"credit"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}

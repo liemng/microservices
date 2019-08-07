@@ -71,6 +71,7 @@ Retrieve the Ingress Controller's external IP:
 
 Modify the tests/microservices.postman_environment.json to have:
 * ```apigw``` to have value of ```<Ingress-IP>```
+* ```oauth``` to have value of ```<Ingress-IP>```
 
 Run the tests:
 
