@@ -35,6 +35,7 @@ spec:
       containers:
       - name: oauth2
         image: liemmn/dxc-oauth2-server:microservices
+        imagePullPolicy: Always
         ports:
           - containerPort: 9999
         readinessProbe:

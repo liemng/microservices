@@ -6,34 +6,22 @@ A simple microservice-based exercise using SpringBoot:
 ![Class diagram](docs/overview.png)
 
 ## Requirements
-* Requires Docker, Kubernetes (tested on AKS), Java 8, and Maven
+* Requires Docker, Kubernetes, Helm, Java 8, and Maven
 * At run-time, fetches configurations from [Configuration Github](https://github.com/liemng/microconfig)
 
 ## Build it!
 `mvn clean package docker:build`
 
 ## Deploy it!
-Assumption:  A Kubernetes cluster has been provisioned.
-
-### Helm
-```helm init --service-account tiller```
-
-```kubectl create serviceaccount --namespace kube-system tiller```
-
-```kubectl create clusterrolebinding tiller-cluster-rule --clusterrole=cluster-admin --serviceaccount=kube-system:tiller```
-
-```kubectl patch deploy --namespace kube-system tiller-deploy -p '{"spec":{"template":{"spec":{"serviceAccount":"tiller"}}}}'```
-
-```helm repo add bitnami https://charts.bitnami.com```
 
 ### Third-Party Infrastructure
 Install MySQL:
 
 ```helm install --name microdb --set mysqlRootPassword=7layer,mysqlDatabase=microservicedb stable/mysql```
 
-Install Kafka:
+Install RabbitMQ (HA):
 
-```helm install --name microbus bitnami/kafka```
+```helm install --name eventing --set rabbitmqPassword=guest stable/rabbitmq-ha```
 
 Install NginX Ingress Controller:
 

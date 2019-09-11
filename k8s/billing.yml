@@ -35,6 +35,7 @@ spec:
       containers:
       - name: billing
         image: liemmn/dxc-billing-service:microservices
+        imagePullPolicy: Always
         ports:
           - containerPort: 8890
         env:

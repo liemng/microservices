@@ -35,6 +35,7 @@ spec:
       containers:
       - name: config
         image: liemmn/dxc-config-server:microservices
+        imagePullPolicy: Always
         ports:
           - containerPort: 8888
         readinessProbe:

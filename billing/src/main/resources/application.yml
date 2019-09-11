@@ -8,10 +8,3 @@ spring:
           destination: billingTopic
           content-type: application/json
           group: billingGroup
-      kafka:
-        binder:
-          zkNodes: localhost
-          brokers: localhost
-logging:
-  level:
-    org.apache.kafka: WARN

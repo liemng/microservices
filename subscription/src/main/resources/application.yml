@@ -7,10 +7,3 @@ spring:
         output:
           destination: billingTopic
           content-type: application/json
-      kafka:
-        binder:
-          zkNodes: localhost
-          brokers: localhost
-logging:
-  level:
-    org.apache.kafka: WARN

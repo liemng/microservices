@@ -35,6 +35,7 @@ spec:
       containers:
       - name: subscription
         image: liemmn/dxc-subscription-service:microservices
+        imagePullPolicy: Always
         ports:
           - containerPort: 8889
         env:
