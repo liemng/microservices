@@ -1,6 +1,7 @@
 .DS_Store
 .metadata/
 .recommenders/
+.sts4-cache/
 .classpath
 .project
 .settings/
